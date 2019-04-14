@@ -1,0 +1,20 @@
+{
+  "puddlestuff.functions_autonumbering": {
+    "fields": [
+      "track"
+    ], 
+    "arguments": [
+      1, 
+      false, 
+      2
+    ]
+  }, 
+  "puddlestuff.functions_formatValue": {
+    "fields": [
+      "track"
+    ], 
+    "arguments": [
+      "$if($isdigit(%track%),$num(%track%,2),%track%)"
+    ]
+  }
+}

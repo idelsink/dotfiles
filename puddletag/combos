@@ -1,0 +1,14 @@
+{
+  "filter_text": {
+    "values": [
+      "", 
+      ""
+    ]
+  }, 
+  "&Format string": {
+    "values": [
+      "$if($isdigit(%track%),$num(%track%,2),%track%)", 
+      "$if($isdigit(%track%),$num(%track%,2),%track%)"
+    ]
+  }
+}
