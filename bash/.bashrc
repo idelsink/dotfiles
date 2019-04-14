@@ -8,6 +8,9 @@ fi
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
+# Add to PATH
+PATH=$PATH:$HOME/.local/bin
+
 # ANSI color codes
 BBLE="\033[44m"     # background blue
 BBLK="\033[40m"     # background black
