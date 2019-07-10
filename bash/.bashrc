@@ -9,7 +9,7 @@ fi
 # export SYSTEMD_PAGER=
 
 # Add to PATH
-PATH=$PATH:$HOME/.local/bin
+PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
 # ANSI color codes
 BBLE="\033[44m"     # background blue
