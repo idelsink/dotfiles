@@ -1,0 +1,19 @@
+# Migrate old configuration to the newest version
+
+- name: Get .bash_aliases_system file type
+  stat:
+    path: "{{ ansible_facts.env.HOME }}/.bash_aliases_system"
+  register: result
+- name: Remove .bash_aliases_system symlink
+  when:
+    - result.stat.islnk is defined
+    - result.stat.islnk
+    - result.stat.lnk_source == ansible_facts.env.HOME + '/dotfiles/git/.gitconfig'
+  file:
+    path: "{{ ansible_facts.env.HOME }}/.bash_aliases_system"
+    state: absent
+
+- name: Remove .powerline-shell.json (replaced with ~/.config/powerline/config.json variant)
+  file:
+    path: "{{ ansible_facts.env.HOME }}/.powerline-shell.json"
+    state: absent

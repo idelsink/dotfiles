@@ -1,0 +1,71 @@
+- name: Checkout dotfiles
+  git:
+    repo: "https://github.com/idelsink/dotfiles.git"
+    dest: "{{ dotfiles_repository_path }}"
+    version: "{{ dotfiles_version }}"
+    # Do update and do fail when there are changes
+    # This forces the user to verify that the changes are relevant and should be commited
+    update: yes
+
+- import_tasks: migrate.yml
+
+- name: Create dotfiles
+  file:
+    src: "{{ item.src|default(omit) }}"
+    path: "{{ item.dest|default(omit) }}"
+    state: "{{ item.state|default('link') }}"
+    force: "{{ item.force|default(true) }}"
+  loop_control:
+    label: "{{ item.name }}"
+  loop:
+    # bash
+    - name: .bashrc
+      src: "{{ dotfiles_repository_path }}/files/bash/.bashrc"
+      dest: "{{ ansible_facts.env.HOME }}/.bashrc"
+    - name: .bash_aliases
+      src: "{{ dotfiles_repository_path }}/files/bash/.bash_aliases"
+      dest: "{{ ansible_facts.env.HOME }}/.bash_aliases"
+    # System specific configuration, can be modified on the system itself
+    - name: .bash_aliases_system
+      src: "{{ dotfiles_repository_path }}/files/bash/.bash_aliases_system"
+      dest: "{{ ansible_facts.env.HOME }}/.bash_aliases_system"
+      state: file
+      force: false
+
+    # git
+    - name: .gitconfig
+      src: "{{ dotfiles_repository_path }}/files/git/.gitconfig"
+      dest: "{{ ansible_facts.env.HOME }}/.gitconfig"
+    # System specific configuration, can be modified on the system itself
+    - name: .gitconfig_system
+      src: "{{ dotfiles_repository_path }}/files/git/.gitconfig_system"
+      dest: "{{ ansible_facts.env.HOME }}/.gitconfig_system"
+      state: file
+      force: false
+
+    # vim
+    - name: .vimrc
+      src: "{{ dotfiles_repository_path }}/files/vim/.vimrc"
+      dest: "{{ ansible_facts.env.HOME }}/.vimrc"
+    - name: directory .vim/ftplugin/
+      dest: "{{ ansible_facts.env.HOME }}/.vim/ftplugin/"
+      state: directory
+    - name: gitcommit.vim
+      src: "{{ dotfiles_repository_path }}/files/vim/.vim/ftplugin/gitcommit.vim"
+      dest: "{{ ansible_facts.env.HOME }}/.vim/ftplugin/gitcommit.vim"
+
+    # tmux
+    - name: .tmux.conf
+      src: "{{ dotfiles_repository_path }}/files/tmux/.tmux.conf"
+      dest: "{{ ansible_facts.env.HOME }}/.tmux.conf"
+
+    # gdb
+    - name: .gdbinit
+      src: "{{ dotfiles_repository_path }}/files/gdb/.gdbinit"
+      dest: "{{ ansible_facts.env.HOME }}/.gdbinit"
+
+
+    # powerline
+    - name: directory .config/powerline
+      src: "{{ dotfiles_repository_path }}/files/powerline/"
+      dest: "{{ ansible_facts.env.HOME }}/.config/powerline"

@@ -1,0 +1,2 @@
+dotfiles_repository_path: "{{ ansible_facts.env.HOME }}/dotfiles"
+dotfiles_version: master

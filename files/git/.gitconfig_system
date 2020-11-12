@@ -1,0 +1,8 @@
+; System specific configuration (e.g. user and signing key)
+; [user]
+;     name = User Name
+;     email = user.name@example.com
+;     signingkey = DEADBEEF
+;
+; [commit]
+;     gpgsign = true
