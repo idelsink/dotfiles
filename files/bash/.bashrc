@@ -105,13 +105,11 @@ export GCC_COLORS
 GCC_COLORS="error=${FRED}:warning=${FMAG}:note=${FCYN}:caret=${FGRN}:locus=\033[:quote=\033["
 
 POWERLINE_SHELL_ENABLED=true # option to enable/disable powerline shell (reload the terminal after change)
-if [[ $POWERLINE_SHELL_ENABLED == "true" ]] && [ -x "$(command -v powerline-shell)" ]; then
-  function _update_ps1() {
-    PS1="$(powerline-shell $?)"
-  }
-  if [ "$TERM" != "linux" ]; then
-    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-  fi
+if [[ $POWERLINE_SHELL_ENABLED == "true" ]] && [ -x "$(command -v powerline-daemon)" ]; then
+  powerline-daemon -q
+  POWERLINE_BASH_CONTINUATION=1
+  POWERLINE_BASH_SELECT=1
+  . /usr/share/powerline/bash/powerline.sh
 fi
 
 # include aliases
