@@ -25,23 +25,11 @@
     - name: .bash_aliases
       src: "{{ dotfiles_repository_path }}/files/bash/.bash_aliases"
       dest: "{{ ansible_facts.env.HOME }}/.bash_aliases"
-    # System specific configuration, can be modified on the system itself
-    - name: .bash_aliases_system
-      src: "{{ dotfiles_repository_path }}/files/bash/.bash_aliases_system"
-      dest: "{{ ansible_facts.env.HOME }}/.bash_aliases_system"
-      state: file
-      force: false
 
     # git
     - name: .gitconfig
       src: "{{ dotfiles_repository_path }}/files/git/.gitconfig"
       dest: "{{ ansible_facts.env.HOME }}/.gitconfig"
-    # System specific configuration, can be modified on the system itself
-    - name: .gitconfig_system
-      src: "{{ dotfiles_repository_path }}/files/git/.gitconfig_system"
-      dest: "{{ ansible_facts.env.HOME }}/.gitconfig_system"
-      state: file
-      force: false
 
     # vim
     - name: .vimrc
@@ -64,8 +52,21 @@
       src: "{{ dotfiles_repository_path }}/files/gdb/.gdbinit"
       dest: "{{ ansible_facts.env.HOME }}/.gdbinit"
 
-
     # powerline
     - name: directory .config/powerline
       src: "{{ dotfiles_repository_path }}/files/powerline/"
       dest: "{{ ansible_facts.env.HOME }}/.config/powerline"
+
+- name: Copy .bash_aliases_system system specific configuration (can be modified on the system itself)
+  copy:
+    src: "{{ dotfiles_repository_path }}/files/bash/.bash_aliases_system"
+    dest: "{{ ansible_facts.env.HOME }}/.bash_aliases_system"
+    remote_src: true
+    force: false
+
+- name: Copy .gitconfig_system system specific configuration (can be modified on the system itself)
+  copy:
+    src: "{{ dotfiles_repository_path }}/files/git/.gitconfig_system"
+    dest: "{{ ansible_facts.env.HOME }}/.gitconfig_system"
+    remote_src: true
+    force: false
