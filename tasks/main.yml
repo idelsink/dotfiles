@@ -19,12 +19,15 @@
     label: "{{ item.name }}"
   loop:
     # bash
+    - name: directory .bashrc.d/
+      src: "{{ dotfiles_repository_path }}/files/bash/.bashrc.d"
+      dest: "{{ ansible_facts.env.HOME }}/.bashrc.d"
     - name: .bashrc
       src: "{{ dotfiles_repository_path }}/files/bash/.bashrc"
       dest: "{{ ansible_facts.env.HOME }}/.bashrc"
-    - name: .bash_aliases
-      src: "{{ dotfiles_repository_path }}/files/bash/.bash_aliases"
-      dest: "{{ ansible_facts.env.HOME }}/.bash_aliases"
+    - name: .bash_profile
+      src: "{{ dotfiles_repository_path }}/files/bash/.bash_profile"
+      dest: "{{ ansible_facts.env.HOME }}/.bash_profile"
 
     # git
     - name: .gitconfig
@@ -57,10 +60,10 @@
       src: "{{ dotfiles_repository_path }}/files/powerline/"
       dest: "{{ ansible_facts.env.HOME }}/.config/powerline"
 
-- name: Copy .bash_aliases_system system specific configuration (can be modified on the system itself)
+- name: Copy aliases_system.sh system specific configuration (can be modified on the system itself)
   copy:
-    src: "{{ dotfiles_repository_path }}/files/bash/.bash_aliases_system"
-    dest: "{{ ansible_facts.env.HOME }}/.bash_aliases_system"
+    src: "{{ dotfiles_repository_path }}/files/bash/.bashrc.d/aliases_system.sh"
+    dest: "{{ ansible_facts.env.HOME }}/.bashrc.d/aliases_system.sh"
     remote_src: true
     force: false
 

@@ -4,11 +4,34 @@
   stat:
     path: "{{ ansible_facts.env.HOME }}/.bash_aliases_system"
   register: result
+# Delete old symlink, is now a copy
 - name: Remove .bash_aliases_system symlink
   when:
     - result.stat.islnk is defined
     - result.stat.islnk
-    - result.stat.lnk_source == ansible_facts.env.HOME + '/dotfiles/git/.gitconfig'
+    - result.stat.lnk_source == ansible_facts.env.HOME + '/dotfiles/bash/.bash_aliases_system'
+  file:
+    path: "{{ ansible_facts.env.HOME }}/.bash_aliases_system"
+    state: absent
+# Move hard copy (if exists)
+- name: Move .bash_aliases_system to .bashrc.d/aliases_system
+  when:
+    - result.stat.exists
+  copy:
+    remote_src: true
+    src: "{{ ansible_facts.env.HOME }}/.bash_aliases_system"
+    dest: "{{ dotfiles_repository_path }}/files/bash/.bashrc.d/aliases_system.sh"
+
+- name: Get .bash_aliases file type
+  stat:
+    path: "{{ ansible_facts.env.HOME }}/.bash_aliases"
+  register: result
+# Delete old symlink, moved to bashrc.d
+- name: Remove .bash_aliases symlink
+  when:
+    - result.stat.islnk is defined
+    - result.stat.islnk
+    - result.stat.lnk_source == ansible_facts.env.HOME + '/dotfiles/files/bash/.bash_aliases'
   file:
     path: "{{ ansible_facts.env.HOME }}/.bash_aliases_system"
     state: absent
