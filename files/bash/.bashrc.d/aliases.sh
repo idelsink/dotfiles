@@ -1,38 +1,30 @@
 #!/usr/bin/env bash
 # See 'aliases_system.sh' for specific system aliases
 
-# no fuckups plz
+# Do an interactive remove action by default to save my precious files :)
 alias rm='rm -I'
 alias cp='cp -i'
 alias mv='mv -i'
 
-# make all the things nice!
+# Add coloring (support) by default
 alias ls='ls --color'
 alias ll='ls -lh --color'
 alias la='ll -a --color'
 alias less='less --raw-control-chars'
+alias ip='ip -c'
+# Adding an extra space behind command
+# Makes it possible to expand command and use aliasses
+alias watch='watch --color '
 
-# let out my inner child!
-alias boop='touch'
-
-# I did an oopsie
 alias fuck='sudo $(history -p \!\!)'
 
-# some bash stuff
 alias reload-bashrc='. ~/.bashrc'
 alias dirs='dirs -v'
 
-# gdb
 alias gdb='gdb -quiet'
 alias arm-none-eabi-gdb='arm-none-eabi-gdb -quiet'
 
 alias xdo='xdg-open'
-
-alias ip='ip -c'
-
-# Adding an extra space behind command
-# Makes it possible to expand command and use aliasses
-alias watch='watch --color '
 
 # docker
 alias docker-rm-containers='docker rm $(docker ps -a -q)' # Delete all containers
