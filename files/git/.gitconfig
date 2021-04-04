@@ -1,5 +1,5 @@
 [include]
-		path = .gitconfig_system ; System specific configuration
+    path = .gitconfig_system ; System specific configuration
 
 [alias]
     # nice diff in commits between branches eg.
