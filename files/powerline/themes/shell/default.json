@@ -23,6 +23,7 @@
       {
         "function": "powerline.segments.shell.last_status"
       }
-    ]
+    ],
+    "right": []
   }
 }
