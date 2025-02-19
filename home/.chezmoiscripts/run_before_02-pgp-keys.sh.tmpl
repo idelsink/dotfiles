@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [[ "{{ .pgp.provisionSubkey }}" == true ]]; then
+  ${CHEZMOI_WORKING_TREE}/bin/provision-pgp-machine-key.sh \
+    --fingerprint="{{ .pgp.fingerprint }}" \
+    --quiet-on-success
+fi

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if [[ "{{ .ssh.provisionEd25519 }}" == true ]]; then
+  ${CHEZMOI_WORKING_TREE}/bin/provision-ssh-key.sh \
+    --name="id" \
+    --comment="{{ .name }}" \
+    --type="ed25519" \
+    --generate-password
+fi

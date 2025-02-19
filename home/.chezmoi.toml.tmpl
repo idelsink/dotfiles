@@ -1,0 +1,21 @@
+{{- $name := promptStringOnce . "name" "Full Name" "Ingmar Delsink" -}}
+{{- $email := promptStringOnce . "email" "Email address (used in gitconfig for example)" -}}
+
+{{- $provisionEd25519SshKey := promptBoolOnce . "provisionSshKey" "Provision this device with an ed25519 SSH key" true -}}
+
+{{- $provisionPgpSubkey := promptBoolOnce . "provisionPgpSubkey" "Provision this device with a PGP Subkey" true -}}
+{{- $pgpFingerprint := "" -}}
+{{- if $provisionPgpSubkey }}
+  {{- $pgpFingerprint = promptStringOnce . "pgpFingerprint" "What is the primary PGP fingerprint to use" "2490AACAD97245B59ACCB7A96BFF495F6EF46E6E" -}}
+{{- end }}
+
+[data]
+name = {{ $name | quote }}
+email = {{ $email | quote }}
+
+[data.ssh]
+provisionEd25519 = {{ $provisionEd25519SshKey }}
+
+[data.pgp]
+provisionSubkey = {{ $provisionPgpSubkey }}
+fingerprint = {{ $pgpFingerprint | quote }}

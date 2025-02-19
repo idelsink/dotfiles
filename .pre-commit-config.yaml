@@ -1,0 +1,8 @@
+repos:
+  - repo: https://github.com/thlorenz/doctoc
+    rev: v2.2.0
+    hooks:
+      - id: doctoc
+        args:
+          - --notitle # Don't add a title to the ToC
+          - --update-only # only update the existing ToC, don't auto insert ToCs

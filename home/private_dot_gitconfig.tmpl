@@ -1,0 +1,58 @@
+[user]
+  name = {{ .name }}
+  email = {{ .email }}
+  {{ if .pgp.provisionSubkey -}}
+  # Note the '!' following the GPG key. This is required to properly select the preffered signing key
+  signingkey = {{ output (print .chezmoi.workingTree "/bin/get-pgp-key-detail.sh") (print "--fingerprint=" .pgp.fingerprint) "--detail=fingerprint" | trim }}!
+  {{- end }}
+
+{{ if .pgp.provisionSubkey -}}
+[commit]
+  gpgsign = true
+{{- end }}
+
+[alias]
+  # nice diff in commits between branches eg.
+  # `diffbranch master..devel` will give some stuff
+  diffbranch = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  # show the diff in the words instead of full lines
+  diffw = diff --color-words
+  ##############
+  f = fetch
+  fo = fetch origin
+  fu = fetch upstream
+  ##############
+  s = status # I would greatly appreciate it if you kindly give me some status
+  sb = status -s -b
+  ##############
+  l = log --oneline
+  lg = log --oneline --graph --decorate
+  ##############
+  ls = ls-files
+  lsf = "!git ls-files | grep -i" # find
+  ##############
+  whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
+  whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
+
+[push]
+  default = simple
+
+[core]
+  editor = vim
+  pager = less
+
+[color]
+  ui = auto
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+
+[gpg]
+    program = gpg2
+
+[credential]
+	helper = store
+
+[include]
+  path = ~/.gitconfig.d/local
