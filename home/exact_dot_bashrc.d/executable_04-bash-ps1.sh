@@ -1,8 +1,31 @@
 #!/usr/bin/env bash
+#
+# Configure the Bash PS1 variable 
 
-DEFAULT_PS1_BASH_ENABLED=false # option to enable/disable powerline shell (reload the terminal after change)
-if [[ $DEFAULT_PS1_BASH_ENABLED == "true" ]]; then
+# Option to enable/disable individual PS1 options (and fallbacks)
+POWERLINE_GO_BASH_ENABLED=true
+POWERLINE_BASH_ENABLED=true
+DEFAULT_PS1_BASH_ENABLED=true
 
+# Configure PS1 options with fallbacks
+if [[ -x "$(command -v powerline-go)" ]] && [[ "${POWERLINE_GO_BASH_ENABLED}" == "true" ]]; then
+  # powerline-go - https://github.com/justjanne/powerline-go
+  function _update_ps1() {
+    PS1="$(powerline-go -modules ssh,cwd,git,hg,jobs,root,exit \
+      -error $? \
+      -jobs "$(jobs -p | wc -l)")"
+  }
+  if [ "${TERM}" != "linux" ]; then
+    PROMPT_COMMAND="_update_ps1; ${PROMPT_COMMAND}"
+  fi
+elif [[ -x "$(command -v powerline-daemon)" ]] && [[ "${POWERLINE_BASH_ENABLED}" == "true" ]]; then
+  # powerline - https://powerline.readthedocs.io/en/master/index.html
+  powerline-daemon -q
+  export POWERLINE_BASH_CONTINUATION=1
+  export POWERLINE_BASH_SELECT=1
+  . /usr/share/powerline/bash/powerline.sh
+elif [[ $DEFAULT_PS1_BASH_ENABLED == "true" ]]; then
+  # Simple fallback that shows the git branch when possible
   function print_git_color {
     local git_status
     git_status="$(git status 2> /dev/null)"
@@ -56,5 +79,4 @@ if [[ $DEFAULT_PS1_BASH_ENABLED == "true" ]]; then
   PS1+="\$(git_branch)" # prints current branch
   PS1+="\[$(print_ansi_escape_sequence reset)\]"
   PS1+="\$ "
-
 fi
