@@ -9,16 +9,26 @@ if ! command -v crudini &> /dev/null; then
   exit 1
 fi
 
-dconf_file="dconf.ini"
+if [[ $# -lt 1 ]]; then
+  echo "Usage: $0 <ini_file> [additional_ini_files...]"
+  exit 1
+fi
 
-if [[ ! -f "${dconf_file}" ]]; then
+# Use the first provided file as the target for writing back settings
+target_file="$1"
+shift  # Remove the first file from the arguments list
+
+if [[ ! -f "${target_file}" ]]; then
   # File does not exist, so nothing to export
   exit 0
 fi
 
-for section in $(crudini --get "${dconf_file}" 2>/dev/null); do
-  for key in $(crudini --get "${dconf_file}" "${section}" 2>/dev/null); do
-    dconf_value=$(dconf read "/${section}/${key}")
-    crudini --set "${dconf_file}" "${section}" "${key}" "${dconf_value}"
+for dconf_file in "$target_file" "$@"; do
+  # Export all settings from dconf
+  for section in $(crudini --get "$dconf_file" 2>/dev/null); do
+    for key in $(crudini --get "$dconf_file" "$section" 2>/dev/null); do
+      dconf_value=$(dconf read "/$section/$key")
+      crudini --ini-options=nospace --set "$target_file" "$section" "$key" "$dconf_value"
+    done
   done
 done
