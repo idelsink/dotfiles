@@ -19,3 +19,10 @@ provisionEd25519 = {{ $provisionEd25519SshKey }}
 [data.pgp]
 provisionSubkey = {{ $provisionPgpSubkey }}
 fingerprint = {{ $pgpFingerprint | quote }}
+
+# This hook will export the monitored dconf settings into the destination direcory, see {{ .chezmoi.sourceDir }}/dot_config/dconf-chezmoi/README.md
+[hooks.read-source-state.pre]
+{{ if eq .chezmoi.os "linux" -}}
+command = "/usr/bin/env"
+args = ["bash", "-c", "(cd $HOME/.config/dconf-chezmoi && {{ joinPath .chezmoi.sourceDir "dot_config/dconf-chezmoi/.export-dconf-settings.sh" | toToml }})"]
+{{ end }}
