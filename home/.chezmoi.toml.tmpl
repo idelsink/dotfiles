@@ -26,3 +26,7 @@ fingerprint = {{ $pgpFingerprint | quote }}
 command = "/usr/bin/env"
 args = ["bash", "-c", "(cd $HOME/.config/dconf-chezmoi && {{ joinPath .chezmoi.sourceDir "dot_config/dconf-chezmoi/.export-dconf-settings.sh" | toToml }} 'dconf.ini' '{{ joinPath .chezmoi.sourceDir "dot_config/dconf-chezmoi/dconf.ini" | toToml }}')"]
 {{ end }}
+
+[diff]
+# Exclude scripts by default from the diff view
+exclude = ["scripts"]
