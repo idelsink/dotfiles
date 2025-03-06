@@ -24,7 +24,7 @@ fingerprint = {{ $pgpFingerprint | quote }}
 [hooks.read-source-state.pre]
 {{ if eq .chezmoi.os "linux" -}}
 command = "/usr/bin/env"
-args = ["bash", "-c", "(cd $HOME/.config/dconf-chezmoi && {{ joinPath .chezmoi.sourceDir "dot_config/dconf-chezmoi/.export-dconf-settings.sh" | toToml }} 'dconf.ini' '{{ joinPath .chezmoi.sourceDir "dot_config/dconf-chezmoi/dconf.ini" | toToml }}')"]
+args = ["bash", "-c", "{{ joinPath .chezmoi.sourceDir "dot_config/dconf-chezmoi/.export-dconf-settings.sh" | toToml }} \"$HOME/.config/dconf-chezmoi/dconf.ini\" \"{{ joinPath .chezmoi.sourceDir "dot_config/dconf-chezmoi/dconf.ini" | toToml }}\""]
 {{ end }}
 
 [diff]
