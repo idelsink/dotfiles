@@ -2,6 +2,7 @@
 
 Dconf is a low-level configuration system (database) backend used by Gnome to store desktop environment settings.
 The `dconf.ini` file contains the sections and keys that are monitored and backed up using chezmoi.
+Its stored in the `keyfile` format, which is similar to an ini file. See <https://help.gnome.org/admin/system-admin-guide/stable/dconf-keyfiles.html.en>
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -11,6 +12,7 @@ The `dconf.ini` file contains the sections and keys that are monitored and backe
   - [2. Let chezmoi handle the `dconf.ini` file](#2-let-chezmoi-handle-the-dconfini-file)
   - [3. Import the `dconf.ini` into dconf system database](#3-import-the-dconfini-into-dconf-system-database)
 - [Why is the export a hook but the import a script?](#why-is-the-export-a-hook-but-the-import-a-script)
+- [Automatic dconf backups](#automatic-dconf-backups)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -50,3 +52,7 @@ As the documentation states:
 > chezmoi's behavior when the above assumptions are violated is undefined. For example, using a run_before_ script to update files in the source or destination states violates the assumption that the source and destination states do not change while chezmoi is running.
 >
 > <https://www.chezmoi.io/reference/application-order/>
+
+## Automatic dconf backups
+
+Whenever the import is run, it will create a dconf export (`dconf dump /`) and stores it in the dconf-backups directory, just in case something would go wrong. For simplicity and because we're dealing with small text files, old backups are not automatically deleted.
