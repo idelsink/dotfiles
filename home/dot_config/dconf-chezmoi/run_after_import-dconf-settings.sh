@@ -2,6 +2,11 @@
 #
 # Script that loads the dconf compatible keyfile
 
+if ! command -v dconf &> /dev/null; then
+  # dconf is not found, assuming dconf is not used on this system
+  exit 0
+fi
+
 if ! command -v crudini &> /dev/null; then
   echo "Could not find command crudini, exiting..."
   exit 1

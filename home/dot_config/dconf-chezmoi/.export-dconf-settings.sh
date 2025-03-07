@@ -4,6 +4,11 @@
 #   1. Reads the current value for that section/key from the dconf database
 #   2. Writes it back into the config file (changed dconf values will then overwrite the current value)
 
+if ! command -v dconf &> /dev/null; then
+  # dconf is not found, assuming dconf is not used on this system
+  exit 0
+fi
+
 if ! command -v crudini &> /dev/null; then
   echo "Could not find command crudini, exiting..."
   exit 1
