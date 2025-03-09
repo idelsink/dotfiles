@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
+  "icon_theme": "Colored Zed Icons Theme Light",
   "show_completions_on_input": true,
   "base_keymap": "Atom",
   "tab_size": 2,
@@ -20,11 +21,11 @@
   "features": {
     "inline_completion_provider": "copilot"
   },
-  "ui_font_size": 18,
+  "ui_font_size": 16,
   "ui_font_family": "Zed Plex Sans",
   "git_status": true,
   "hour_format": "hour24",
-  "buffer_font_size": 18,
+  "buffer_font_size": 16,
   "buffer_font_family": "Source Code Pro",
   "theme": {
     "mode": "system",
