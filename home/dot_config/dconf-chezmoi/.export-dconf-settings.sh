@@ -31,22 +31,39 @@ fi
 declare -A processed_dconf_keys # Hash map to track processed keys
 crudini_args=() # Array of crudini commands in format of --set <file> <section> <key> <value>
 
-for dconf_file in "$target_file" "$@"; do
-  # Export all settings from dconf
-  for section in $(crudini --get "$dconf_file" 2>/dev/null); do
-    for key in $(crudini --get "$dconf_file" "$section" 2>/dev/null); do
-      key_path="$section/$key"
+for dconf_file in "${target_file}" "$@"; do
+  if [[ -f "${dconf_file}" ]]; then
+    # Loop all dconf keys using the crudini lines output
+    # This greatly speeds up the looping over all the keys instead of a nested sections and keys loop
+    while read -r line; do
+      # Each crudini line is formatted as:
+      #
+      # [ section-header-1 ] key-1 = value
+      # [ section-header-1 ] key-2 = true
+      # [ section-header-2 ] key-1 = 'foo'
+      # [ section-header-2 ] key-2 = 'bar'
+      # ...
+      #
+      # See: https://github.com/pixelb/crudini/blob/9657a5b046c6d30b36e8dabc707021289fe11514/crudini.py#L377
+      #
+      # Apply regex to each line (https://tldp.org/LDP/abs/html/x17129.html) to extract section, key and value
+      regex="^\[[[:space:]](.*)[[:space:]]\][[:space:]](.*)[[:space:]]=[[:space:]](.*)$"
+      if [[ "${line}" =~ $regex ]]; then
+        section="${BASH_REMATCH[1]}"
+        key="${BASH_REMATCH[2]}"
+        # value="${BASH_REMATCH[3]}" # Value is not used as we will fetch the value from dconf
+        key_path="${section}/${key}"
 
-      # Check if already processed
-      if [[ -z "${processed_dconf_keys[$key_path]}" ]]; then
-        dconf_value=$(dconf read "/$key_path")
-        processed_dconf_keys["$key_path"]="true" # Mark as processed
-        # Appending command to arguments array (to speedup write back)
-        # crudini --ini-options=nospace --set "$target_file" "$section" "$key" "$dconf_value"
-        crudini_args+=("--set" "$target_file" "$section" "$key" "$dconf_value")
+        if [[ -z "${processed_dconf_keys[${key_path}]}" ]]; then
+          dconf_value=$(dconf read "/${key_path}")
+          processed_dconf_keys["${key_path}"]="true" # Mark as processed
+          # Appending command to arguments array (to speedup write back)
+          # crudini --ini-options=nospace --set "$target_file" "$section" "$key" "$dconf_value"
+          crudini_args+=("--set" "${target_file}" "${section}" "${key}" "${dconf_value}")
+        fi
       fi
-    done
-  done
+    done < <(crudini --format=lines --get "${dconf_file}")
+  fi
 done
 
 # Run all crudini commands in one batch operation to speedup writebacks
