@@ -37,13 +37,36 @@ print_usage() {
   echo "  \$ ${0} --name=mykey --comment='myuser@myhost'"
 }
 
+# Generate a password and output to stdout
+# Arguments:
+#   $1 - variable to store the password in
+#   $2 - (optional) Password size, defaults to 40
+# Returns:
+#   returns 0 (success); otherwise it returns 1
 generate_password() {
-  SSH_KEY_PASSWORD=$(openssl rand -base64 32)
+  local -n password_var # Declare but don't assign yet
+  # Only assign if $2 is provided
+  if [[ -n "${1}" ]]; then
+    password_var="${1}"
+  fi
+  local size="${2:-"40"}"
+  # Using the OWASP password special characters list: https://owasp.org/www-community/password-special-characters
+  password_var=$(tr -dc 'A-Za-z0-9!"#$%&'\''()*+,-./:;<=>?@[\]^_`{|}~' </dev/urandom | head -c "${size}");
 }
 
+# Prompt the user for a password
+# Arguments:
+#   $1 - variable to store the password in
+# Returns:
+#   0 on success, 1 on failure
 prompt_for_password() {
-  if [[ -z "${SSH_KEY_PASSWORD}" ]]; then
-    read -s -p "Enter passphrase for ${ssh_key_file}: " SSH_KEY_PASSWORD
+  local -n password_var # Declare but don't assign yet
+  # Only assign if $2 is provided
+  if [[ -n "${1}" ]]; then
+    password_var="${1}"
+  fi
+  if [[ -z "${password_var}" ]]; then
+    read -s -p "Enter passphrase for ${ssh_key_file}: " password_var
     echo
   fi
 }
@@ -73,9 +96,9 @@ ssh_key_file="${SSH_CONFIG_DIR}/${SSH_KEY_NAME}_${SSH_KEY_TYPE}"
 if [[ ! -f "${ssh_key_file}" ]]; then
   echo "Providing device with SSH keypair..."
   if [[ "${GENERATE_PASSWORD}" == true ]]; then
-    generate_password
+    generate_password SSH_KEY_PASSWORD
   else
-    prompt_for_password
+    prompt_for_password SSH_KEY_PASSWORD
   fi
   ssh-keygen \
     -t "${SSH_KEY_TYPE}" \
@@ -84,15 +107,15 @@ if [[ ! -f "${ssh_key_file}" ]]; then
     -P "${SSH_KEY_PASSWORD}"
 
   if [[ $? -eq 0 ]]; then
-    chmod 600 "$ssh_key_file"
-    chmod 644 "$ssh_key_file.pub"
+    chmod 600 "${ssh_key_file}"
+    chmod 644 "${ssh_key_file}.pub"
     echo "------------------------------------------------------------"
     echo "  Generated SSH key: $ssh_key_file"
     echo
-    [ "$GENERATE_PASSWORD" = true ] && (echo "  With password: $SSH_KEY_PASSWORD" ; echo)
+    [ "${GENERATE_PASSWORD}" = true ] && (echo "  With password: ${SSH_KEY_PASSWORD}" ; echo)
     echo "  Add the following public key to your Git providers"
     echo
-    echo "    $(cat "$ssh_key_file.pub")"
+    echo "    $(cat "${ssh_key_file}.pub")"
     echo
     echo "  Git Provider Key Setup"
     echo "    * Github:     https://github.com/settings/keys"
@@ -109,7 +132,7 @@ if command -v secret-tool &>/dev/null; then
   KEY_ATTRIBUTE="ssh-store:${ssh_key_file}" # Same format used by the Gnome Keyring
   if ! secret-tool lookup unique "$KEY_ATTRIBUTE" &>/dev/null; then
     echo "Storing SSH key in system keyring"
-    prompt_for_password
+    prompt_for_password SSH_KEY_PASSWORD
     echo "${SSH_KEY_PASSWORD}" | secret-tool store --label="Unlock password for SSH Key: ${SSH_KEY_NAME}_${SSH_KEY_TYPE} (${SSH_KEY_COMMENT})" unique "$KEY_ATTRIBUTE"
   fi
 fi
