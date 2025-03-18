@@ -23,6 +23,7 @@ print_usage() {
   echo "                                    * key-id      : Key ID"
   echo "                                    * fingerprint : Key fingerprint"
   echo "                                    * expiration  : Key expiration date"
+  echo "                                    * key-grip    : Key grip"
   echo "  -h, --help                      print help"
   echo
   echo "ENVIRONMENT VARIABLES:"
@@ -90,24 +91,25 @@ fi
 #   fpr:::::::::AD4300548ABB76DAA265603188D319A165F9A092:
 #   grp:::::::::3D0E9DED4C8069B33CED6771FE418B2CCFD2DB1D:
 #
-# We need to parse two rows and output on the second when:
+# We need to parse multiple rows and output when we have all the data we need:
 #   - The "sub" (subkey) records contain metadata such as the key ID, creation time, and capabilities.
 #   - The "fpr" (fingerprint) records provide the actual fingerprint but appear **separately** from the "sub" records.
-#   - We must **correlate** fingerprint records with their respective subkey records, as they are not on the same line.
+#     - We must **correlate** fingerprint records with their respective subkey records, as they are not on the same line.
+#   - The "grp" (keygrip) records provide the keygrip for that specific key but appears **separately** from the "sub" records.
 #
 # The process works as follows:
 # 1. **Parse the "sub" record**:
 #    - Extract key ID, creation time, expiration time, key capabilities, and secret key availability.
 # 2. **Parse the "fpr" record**:
 #    - Extract the key fingerprint and ensure it corresponds to a subkey we just processed.
-# 3. **Apply filtering conditions** to select a suitable key:
-#    - Must have been created after a certain date. (defaults to 0)
-#    - Must have an expiration time.
-#    - Must have both signing ('s') and authentication ('a') capabilities.
-#    - Must have an associated secret key.
-#
+#    - Apply filtering conditions to select a suitable key:
+#       - Must have been created after a certain date. (defaults to 0)
+#       - Must have an expiration time.
+#       - Must have both signing ('s') and authentication ('a') capabilities.
+#       - Must have an associated secret key.
+# 3. **Parse the "grp" record**
 # If a key meets all these conditions, we output its details, which are captured by the `read` command.
-read -r SUBKEY_ID SUBKEY_FINGERPRINT SUBKEY_EXPIRATION_TIME < <(
+read -r SUBKEY_ID SUBKEY_FINGERPRINT SUBKEY_EXPIRATION_TIME SUBKEY_KEYGRIP < <(
   gpg --with-colons \
     --list-keys \
     --with-secret  \
@@ -124,9 +126,10 @@ read -r SUBKEY_ID SUBKEY_FINGERPRINT SUBKEY_EXPIRATION_TIME < <(
           expiration    = $7  # Field 7 - Expiration date (empty means no expiration)
           capabilities  = $12 # Field 12 - Key capabilities (e.g., "esa" Encrypt(e), Sign(s), Certify(c), Authentication(a), Unknown capability(?))
           serial_number = $15 # Field 15 - If option –with-secret provided "x" will indicate secret availability - Used in sec/ssb to print the serial number of a token
+          sub_found     = !sub_found
         }
 
-        # After, fpr (fingerprint) records appear.
+        # After sub, fpr (fingerprint) records appear.
         if (record_type == "fpr") {
           key_fingerprint = $10  # Field 10 - User-ID A FPR record stores the fingerprint here.
 
@@ -138,8 +141,23 @@ read -r SUBKEY_ID SUBKEY_FINGERPRINT SUBKEY_EXPIRATION_TIME < <(
           is_fingerprint_of_subkey = (key_fingerprint ~ key_id )
 
           if (is_created_after && is_fingerprint_of_subkey && has_expiration && has_secret && can_sign_and_auth) {
-            print key_id, key_fingerprint, expiration
+            fpr_found = !fpr_found
           }
+        }
+
+        # After fpr, grp (keygrip) records appear.
+        if (record_type == "grp" && sub_found && fpr_found) {
+          key_keygrip = $10  # Field 10 - User-ID/keygrip A GRP records puts the keygrip here
+          grp_found   = !grp_found
+        }
+
+        # When all records are processed, we can print all the details
+        if (sub_found && fpr_found && grp_found) {
+          print \
+            key_id, \
+            key_fingerprint, \
+            expiration, \
+            key_keygrip
         }
       }
     '
@@ -149,5 +167,6 @@ case "${PRINT_DETAIL}" in
   key-id      ) echo "${SUBKEY_ID}" ;;
   fingerprint ) echo "${SUBKEY_FINGERPRINT}" ;;
   expiration  ) echo "${SUBKEY_EXPIRATION_TIME}" ;;
+  key-grip    ) echo "${SUBKEY_KEYGRIP}" ;;
   *           ) echo "Detail option ${PRINT_DETAIL} not supported" ;;
 esac
