@@ -191,6 +191,8 @@ case "${ACTION}" in
     prompt_continue
     # Import the public keys
     keybase pgp export --query "${KEY_FINGERPRINT}" | gpg --import --quiet
+    # Set ownertrust to max level
+    echo "${KEY_FINGERPRINT}:6:" | gpg --import-ownertrust
     # Import the private keys
     keybase pgp export --secret --query "${KEY_FINGERPRINT}" | gpg --batch --allow-secret-key-import --import
     gpg --list-secret-keys --keyid-format LONG "${KEY_FINGERPRINT}"
@@ -242,6 +244,8 @@ case "${ACTION}" in
       exit 1
     fi
     echo "${exported_subkey}" | gpg --import --quiet
+    # Set ownertrust to max level
+    echo "${KEY_FINGERPRINT}:6:" | gpg --import-ownertrust
     echo "✅ Subkey imported successfully!"
     echo
     gpg --list-secret-keys --keyid-format LONG "${KEY_FINGERPRINT}"
