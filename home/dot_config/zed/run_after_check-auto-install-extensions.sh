@@ -22,7 +22,7 @@ for ext_dir in "${EXTENSIONS_DIR}"/*; do
     ext_name=$(basename "${ext_dir}")
 
     # If the extension is not in the auto_install_extensions list, add it to the missing list
-    if [[ ! "${auto_install_extensions}" =~ "${ext_name}" ]]; then
+    if [[ ! "${auto_install_extensions}" =~ ${ext_name} ]]; then
       missing_extensions+=("${ext_name}")
     fi
   fi
