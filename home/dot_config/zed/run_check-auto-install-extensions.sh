@@ -14,7 +14,7 @@ if ! command -v jq &>/dev/null ]; then
   exit 0
 fi
 
-auto_install_extensions=$(cat ~/.config/zed/settings.json | sed 's/^ *\/\/.*//' | jq '.auto_install_extensions // [] | keys')
+auto_install_extensions=$(cat ~/.config/zed/settings.json 2> /dev/null||true | sed 's/^ *\/\/.*//' | jq '.auto_install_extensions // [] | keys')
 missing_extensions=()
 
 for ext_dir in "${EXTENSIONS_DIR}"/*; do
