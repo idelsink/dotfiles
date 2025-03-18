@@ -8,6 +8,7 @@
 // command palette
 {
   "auto_install_extensions": {
+    "basher": true,
     "colored-zed-icons-theme": true,
     "dockerfile": true,
     "env": true,
