@@ -10,7 +10,7 @@ if [[ ! "${CHEZMOI_OS}" == "linux" ]]; then
   exit 1
 fi
 
-if ! command -v jq &>/dev/null ]; then
+if ! command -v jq &>/dev/null; then
   exit 0
 fi
 
