@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+# Simple WiFi QR tool based on the idea of https://github.com/kokoye2007/wifi-qr
+
+if ! command -v zbarcam &> /dev/null; then
+  echo "❌ zbarcam not found! Please install it first."
+  exit 1
+fi
+
+echo "📷 Scanning for WiFi QR code..."
+# Run zbarcam and capture the first QR code it detects
+QR=$(zbarcam --raw --oneshot)
+
+# The WIFI QR code format is defined in the Wi-Fi Alliance's WPA3 Specification:
+# https://www.wi-fi.org/system/files/WPA3%20Specification%20v3.2.pdf#page=25
+# The URI is defined by [7] and formatted by the WIFI-qr ABNF rule:
+# WIFI-qr = “WIFI:” [type “;”] [trdisable “;”] ssid “;” [hidden “;”] [id “;”] [password “;”] [public-key “;”] “;”
+#   type = “T:” *(unreserved) ; security type
+#   trdisable = “R:” *(HEXDIG) ; Transition Disable value
+#   ssid = “S:” *(printable / pct-encoded) ; SSID of the network
+#   hidden = “H:true” ; when present, indicates a hidden (stealth) SSID is used
+#   id = “I:” *(printable / pct-encoded) ; UTF-8 encoded password identifier, present if the password
+#   has an SAE password identifier
+#   password = “P:” *(printable / pct-encoded) ; password, present for password-based authentication
+#   public-key = “K:” *PKCHAR ; DER of ASN.1 SubjectPublicKeyInfo in compressed form and encoded in
+#   “base64” as per [6], present when the network supports SAE-PK, else absent
+#   printable = %x20-3a / %x3c-7e ; semi-colon excluded
+#   PKCHAR = ALPHA / DIGIT / %x2b / %x2f / %x3d
+if [[ ${QR} == WIFI:* ]]; then
+  # Parse the QR code
+  # QR_TYPE=$(echo "${QR}" | sed -n 's/.*T:\([^;]*\).*/\1/p')
+  QR_SSID=$(echo "${QR}" | sed -n 's/.*S:\([^;]*\).*/\1/p')
+  QR_PASSWORD=$(echo "${QR}" | sed -n 's/.*P:\([^;]*\).*/\1/p')
+  # QR_HIDDEN=$(echo "$QR" | sed -n 's/.*H:\([^;]*\).*/\1/p')
+
+  # Check if we need to update an existing connection
+  EXISTING_PSK=$(nmcli --show-secrets -g 802-11-wireless-security.psk connection show "$QR_SSID" 2>/dev/null || echo "")
+
+  if [[ "${QR_PASSWORD}" == "${EXISTING_PSK}" ]]; then
+    echo "✅ Already got WiFi for SSID ${QR_SSID}, no need to update."
+  else
+    echo "📶 Adding (or updating) WiFi for SSID ${QR_SSID}."
+    # We need to create a new connection or update an existing one
+    # So always delete the existing one, ignoring errors
+    nmcli connection delete "$QR_SSID" 2>/dev/null 1>/dev/null || true
+    nmcli --ask device wifi connect "${QR_SSID}" password "${QR_PASSWORD}"
+  fi
+else
+  echo "❌ No valid WiFi QR code detected, got:"
+  echo "${QR}"
+fi

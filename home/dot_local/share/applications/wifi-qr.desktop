@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=WiFi QR
+Comment=Scan WiFi QR Code to connect to WiFi
+Exec=bash -c "PATH=$HOME/bin:$PATH wifi-qr; echo -e '\n🕐 Press Enter to close...'; read"
+Icon=network-wireless
+Categories=Network;Utility;
+Terminal=true
