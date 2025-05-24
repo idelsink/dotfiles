@@ -49,7 +49,7 @@ if [[ ${QR} == WIFI:* ]]; then
     ATTEMPTS_REMAINING=3
     NMCLI_OUTPUT=""
     while (( ATTEMPTS_REMAINING-- > 0 )); do
-    # Trigger a WiFi rescan first to make sure the entries are up to date
+      # Trigger a WiFi rescan first to make sure the entries are up to date
       nmcli dev wifi list --rescan yes 1> /dev/null
       NMCLI_OUTPUT=$(nmcli --ask device wifi connect "${QR_SSID}" password "${QR_PASSWORD}" 2>&1)
       # Error: No network with SSID... means that it did not (yet) find network, lets wait and try again
