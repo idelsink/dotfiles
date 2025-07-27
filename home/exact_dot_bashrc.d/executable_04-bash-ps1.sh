@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Configure the Bash PS1 variable 
+# Configure the Bash PS1 variable
 
 # Option to enable/disable individual PS1 options (and fallbacks)
 POWERLINE_GO_BASH_ENABLED=true
@@ -11,7 +11,13 @@ DEFAULT_PS1_BASH_ENABLED=true
 if [[ -x "$(command -v powerline-go)" ]] && [[ "${POWERLINE_GO_BASH_ENABLED}" == "true" ]]; then
   # powerline-go - https://github.com/justjanne/powerline-go
   function _update_ps1() {
-    PS1="$(powerline-go -modules ssh,cwd,git,hg,jobs,root,exit \
+    PS1="$(powerline-go \
+      -modules ssh,cwd,git,hg,jobs,root,exit \
+      -cwd-max-depth 1 \
+      -cwd-mode fancy \
+      -git-mode fancy \
+      -mode patched \
+      -newline \
       -error $? \
       -jobs "$(jobs -p | wc -l)")"
   }
@@ -23,7 +29,15 @@ elif [[ -x "$(command -v powerline-daemon)" ]] && [[ "${POWERLINE_BASH_ENABLED}"
   powerline-daemon -q
   export POWERLINE_BASH_CONTINUATION=1
   export POWERLINE_BASH_SELECT=1
-  . /usr/share/powerline/bash/powerline.sh
+
+  # Check for powerline files in order of preference
+  if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
+    source /usr/share/powerline/bindings/bash/powerline.sh
+  elif [ -f /usr/share/powerline/bash/powerline.sh ]; then
+    source /usr/share/powerline/bash/powerline.sh
+  else
+    echo "Error: No powerline script found in any of the expected locations" >&2
+  fi
 elif [[ $DEFAULT_PS1_BASH_ENABLED == "true" ]]; then
   # Simple fallback that shows the git branch when possible
   function print_git_color {
