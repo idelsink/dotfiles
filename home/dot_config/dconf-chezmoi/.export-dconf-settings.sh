@@ -29,8 +29,6 @@ if [[ ! -f "${target_file}" ]]; then
 fi
 
 declare -A processed_dconf_keys # Hash map to track processed keys
-crudini_args=() # Array of crudini commands in format of --set <file> <section> <key> <value>
-
 for dconf_file in "${target_file}" "$@"; do
   if [[ -f "${dconf_file}" ]]; then
     # Loop all dconf keys using the crudini lines output
@@ -58,15 +56,9 @@ for dconf_file in "${target_file}" "$@"; do
           dconf_value=$(dconf read "/${key_path}")
           processed_dconf_keys["${key_path}"]="true" # Mark as processed
           # Appending command to arguments array (to speedup write back)
-          # crudini --ini-options=nospace --set "$target_file" "$section" "$key" "$dconf_value"
-          crudini_args+=("--set" "${target_file}" "${section}" "${key}" "${dconf_value}")
+          crudini --ini-options=nospace --set "$target_file" "$section" "$key" "$dconf_value"
         fi
       fi
     done < <(crudini --format=lines --get "${dconf_file}")
   fi
 done
-
-# Run all crudini commands in one batch operation to speedup writebacks
-if [[ ${#crudini_args[@]} -gt 0 ]]; then
-  crudini --ini-options=nospace "${crudini_args[@]}"
-fi
