@@ -20,7 +20,7 @@ provisionEd25519 = {{ $provisionEd25519SshKey }}
 provisionSubkey = {{ $provisionPgpSubkey }}
 fingerprint = {{ $pgpFingerprint | quote }}
 
-# This hook will export the monitored dconf settings into the destination direcory, see {{ .chezmoi.sourceDir }}/dot_config/dconf-chezmoi/README.md
+# This hook will export the monitored dconf settings into the destination directory, see {{ .chezmoi.sourceDir }}/dot_config/dconf-chezmoi/README.md
 [hooks.read-source-state.pre]
 {{ if eq .chezmoi.os "linux" -}}
 command = "/usr/bin/env"
