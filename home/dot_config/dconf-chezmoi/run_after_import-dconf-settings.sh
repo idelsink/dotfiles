@@ -19,9 +19,19 @@ if [[ ! -f "${dconf_file}" ]]; then
   exit 0
 fi
 
+# Backup dconf before loading it in
 backup_dir="dconf-backups"
+previous_backup_file=$(find dconf-backups -name "dconf-backup-*.ini" -type f | sort -nr | head -1)
+current_backup_file="${backup_dir}/dconf-backup-$(date +%Y-%m-%dT%H%M%S).ini"
 
-backup_file="$backup_dir/dconf-backup-$(date +%Y%m%d-%H%M%S).ini"
-dconf dump / > "$backup_file"
+dconf dump / > "${current_backup_file}"
 
+if [[ -f "${previous_backup_file}" ]]; then
+  if diff -q "${current_backup_file}" "${previous_backup_file}" &> /dev/null; then
+    # Files are identical, remove the older backup (keeping the new one)
+    rm "${previous_backup_file}"
+  fi
+fi
+
+# Load dconf
 dconf load / < "${dconf_file}"
