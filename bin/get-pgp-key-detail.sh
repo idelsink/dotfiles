@@ -126,7 +126,7 @@ read -r SUBKEY_ID SUBKEY_FINGERPRINT SUBKEY_EXPIRATION_TIME SUBKEY_KEYGRIP < <(
           expiration    = $7  # Field 7 - Expiration date (empty means no expiration)
           capabilities  = $12 # Field 12 - Key capabilities (e.g., "esa" Encrypt(e), Sign(s), Certify(c), Authentication(a), Unknown capability(?))
           serial_number = $15 # Field 15 - If option –with-secret provided "x" will indicate secret availability - Used in sec/ssb to print the serial number of a token
-          sub_found     = !sub_found
+          sub_found     = 1
         }
 
         # After sub, fpr (fingerprint) records appear.
@@ -141,18 +141,21 @@ read -r SUBKEY_ID SUBKEY_FINGERPRINT SUBKEY_EXPIRATION_TIME SUBKEY_KEYGRIP < <(
           is_fingerprint_of_subkey = (key_fingerprint ~ key_id )
 
           if (is_created_after && is_fingerprint_of_subkey && has_expiration && has_secret && can_sign_and_auth) {
-            fpr_found = !fpr_found
+            fpr_found = 1
           }
         }
 
         # After fpr, grp (keygrip) records appear.
         if (record_type == "grp" && sub_found && fpr_found) {
           key_keygrip = $10  # Field 10 - User-ID/keygrip A GRP records puts the keygrip here
-          grp_found   = !grp_found
+          grp_found   = 1
         }
 
         # When all records are processed, we can print all the details
         if (sub_found && fpr_found && grp_found) {
+          sub_found = 0
+          fpr_found = 0
+          grp_found = 0
           print \
             key_id, \
             key_fingerprint, \
