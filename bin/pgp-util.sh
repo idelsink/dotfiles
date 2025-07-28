@@ -14,11 +14,13 @@ print_usage() {
   echo
   echo "Required options:"
   echo "  -a, --action  What action to perform. (default: '${ACTION}')"
-  echo "                  * import-from-keybase   : Import <FINGERPRINT> from Keybase to GPG"
-  echo "                  * export-to-keybase     : Export <FINGERPRINT> from GPG to Keybase"
-  echo "                  * isolate-subkey        : Remove primary <FINGERPRINT> and keep only <SUBKEY>"
-  echo "                  * generate-subkey       : Generate a new subkey for <FINGERPRINT> with <EXPIRATION>"
-  echo "                  * set-subkey-expiration : Update expiration for <FINGERPRINT>'s <SUBKEY> with <EXPIRATION>"
+  echo "                  * import-from-keybase    : Import <FINGERPRINT> from Keybase to GPG"
+  echo "                  * import-from-keybase-fs : Import <FINGERPRINT> from Keybase Filesystem to GPG"
+  echo "                  * export-to-keybase      : Export <FINGERPRINT> from GPG to Keybase"
+  echo "                  * export-to-keybase-fs   : Export <FINGERPRINT> from GPG to Keybase Filesystem"
+  echo "                  * isolate-subkey         : Remove primary <FINGERPRINT> and keep only <SUBKEY>"
+  echo "                  * generate-subkey        : Generate a new subkey for <FINGERPRINT> with <EXPIRATION>"
+  echo "                  * set-subkey-expiration  : Update expiration for <FINGERPRINT>'s <SUBKEY> with <EXPIRATION>"
   echo
   echo "Optional options:"
   echo "  -f, --fingerprint=<FINGERPRINT>     primary key fingerprint."
@@ -177,6 +179,33 @@ get_keybase_user() {
   return $?
 }
 
+# Validates the gpg key KEY_FINGERPRINT for exporting
+# Returns:
+#   0 on success
+#   Exits with code 1 on key failure
+function validate_gpg_keys() {
+  echo
+  echo "✔️ Validate GPG key - This will check for gnu-dummy keys"
+  echo "    Primary      : ${KEY_FINGERPRINT}"
+  echo "    Get ready to enter your Primary key password"
+  prompt_continue
+
+  local keys=$(gpg --armor --export-secret-keys "${KEY_FINGERPRINT}")
+
+  # Check if export produced any content
+  if [[ -z "${keys}" ]]; then
+    echo "❌ Error: No secret keys found for ${KEY_FINGERPRINT}"
+    exit 1
+  fi
+
+  # Check for dummy subkeys
+  if echo "${keys}" | gpg --list-packets | grep -q "gnu-dummy"; then
+    echo "❌ Error: Key contains dummy subkeys. Cannot export incomplete key."
+    echo "   Please restore complete key with all subkey secrets first."
+    exit 1
+  fi
+}
+
 case "${ACTION}" in
   import-from-keybase)
     validate_required_variables KEY_FINGERPRINT "--fingerprint"
@@ -197,10 +226,30 @@ case "${ACTION}" in
     keybase pgp export --secret --query "${KEY_FINGERPRINT}" | gpg --batch --allow-secret-key-import --import
     gpg --list-secret-keys --keyid-format LONG "${KEY_FINGERPRINT}"
     ;;
+  import-from-keybase-fs)
+    validate_required_variables KEY_FINGERPRINT "--fingerprint"
+    required_commands gpg keybase
+    keybase_user=""
+    get_keybase_user keybase_user
+    echo
+    echo "📥 Download and import from Keybase Filesystem"
+    echo "    Keybase User : ${keybase_user}"
+    echo "    Primary      : ${KEY_FINGERPRINT}"
+    echo "    Get ready to enter your Primary key password 2-3 times"
+    prompt_continue
+    # Import the public keys
+    keybase pgp export --query "${KEY_FINGERPRINT}" | gpg --import --quiet
+    # Set ownertrust to max level
+    echo "${KEY_FINGERPRINT}:6:" | gpg --import-ownertrust
+    # Import the private keys
+    keybase pgp pull-private --force "${KEY_FINGERPRINT}"
+    gpg --list-secret-keys --keyid-format LONG "${KEY_FINGERPRINT}"
+    ;;
 
   export-to-keybase)
     validate_required_variables KEY_FINGERPRINT "-f, --fingerprint"
     required_commands gpg keybase
+    validate_gpg_keys
     keybase_user=""
     get_keybase_user keybase_user
     echo
@@ -215,6 +264,26 @@ case "${ACTION}" in
     keybase pgp update "${KEY_FINGERPRINT}"
     # Export the private keys to keybase
     gpg --export-secret-keys "${KEY_FINGERPRINT}" | keybase pgp import --push-secret
+    ;;
+
+  export-to-keybase-fs)
+    validate_required_variables KEY_FINGERPRINT "-f, --fingerprint"
+    required_commands gpg keybase
+    validate_gpg_keys
+    keybase_user=""
+    get_keybase_user keybase_user
+    echo
+    echo "📤 Export and upload to Keybase Filesystem"
+    echo "    Keybase User : ${keybase_user}"
+    echo "    Primary      : ${KEY_FINGERPRINT}"
+    echo "    Get ready to enter your:"
+    echo "      * Primary key password 2 times and"
+    echo "      * your Keybase password."
+    prompt_continue
+    # Update the public keys
+    keybase pgp update "${KEY_FINGERPRINT}"
+    # Push they key to keybase filesystem
+    keybase pgp push-private --force "${KEY_FINGERPRINT}"
     ;;
 
   isolate-subkey)
