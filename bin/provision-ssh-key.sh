@@ -138,7 +138,7 @@ if command -v secret-tool &>/dev/null; then
 fi
 
 # Add SSH key to SSH agent
-PUBLIC_KEY=$(cat $ssh_key_file.pub)
+PUBLIC_KEY=$(cat "${ssh_key_file}.pub")
 if ! ssh-add -L | grep -q "$PUBLIC_KEY"; then
   echo "Adding key to ssh-agent..."
   prompt_for_password
