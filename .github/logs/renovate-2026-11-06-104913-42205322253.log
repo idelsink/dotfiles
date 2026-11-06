@@ -1,0 +1,381 @@
+[2026-11-06T10:48:46.015Z] [command]/usr/bin/docker run --rm --volume /home/runner/work/renovate-runner/renovate-runner/config.js:/usr/src/app/config.js:ro --volume /home/runner/work/_temp/renovate-cache/renovate/repository:/tmp/renovate/cache/renovate/repository --env RENOVATE_RUNNER_REPO --env RENOVATE_TOKEN --env RENOVATE_REPOSITORIES --env LOG_LEVEL --env CI ghcr.io/renovatebot/renovate:44.198.0@sha256:9ace7c60234605b242fa7edf44f77a70a17f3b0e963e8e969bd59341a5b4295d
+[2026-11-06T10:48:46.105Z] Unable to find image 'ghcr.io/renovatebot/renovate:44.198.0@sha256:9ace7c60234605b242fa7edf44f77a70a17f3b0e963e8e969bd59341a5b4295d' locally
+[2026-11-06T10:48:46.557Z] ghcr.io/renovatebot/renovate@sha256:9ace7c60234605b242fa7edf44f77a70a17f3b0e963e8e969bd59341a5b4295d: Pulling from renovatebot/renovate
+[2026-11-06T10:48:46.743Z] 4f4fb700ef54: Pulling fs layer
+[2026-11-06T10:48:46.743Z] bf5f23aafe89: Pulling fs layer
+[2026-11-06T10:48:46.743Z] 6c324a26f445: Pulling fs layer
+[2026-11-06T10:48:46.743Z] cde406f98df7: Pulling fs layer
+[2026-11-06T10:48:46.743Z] d71565722191: Pulling fs layer
+[2026-11-06T10:48:46.743Z] 2be9525b2226: Pulling fs layer
+[2026-11-06T10:48:46.743Z] 7650ba84d437: Pulling fs layer
+[2026-11-06T10:48:46.743Z] 9caeb2c9b0be: Pulling fs layer
+[2026-11-06T10:48:46.744Z] 26f18218d114: Pulling fs layer
+[2026-11-06T10:48:46.744Z] 2410fdf29426: Pulling fs layer
+[2026-11-06T10:48:46.744Z] 4b624c614056: Pulling fs layer
+[2026-11-06T10:48:46.744Z] d5a7cded1aa7: Pulling fs layer
+[2026-11-06T10:48:46.811Z] 4f4fb700ef54: Already exists
+[2026-11-06T10:48:46.911Z] cde406f98df7: Download complete
+[2026-11-06T10:48:46.912Z] d5a7cded1aa7: Download complete
+[2026-11-06T10:48:46.912Z] d71565722191: Download complete
+[2026-11-06T10:48:46.913Z] bf5f23aafe89: Download complete
+[2026-11-06T10:48:46.913Z] 26f18218d114: Download complete
+[2026-11-06T10:48:47.113Z] a2098fa1d0fd: Download complete
+[2026-11-06T10:48:47.812Z] 2be9525b2226: Download complete
+[2026-11-06T10:48:48.011Z] 6c324a26f445: Download complete
+[2026-11-06T10:48:48.111Z] 2410fdf29426: Download complete
+[2026-11-06T10:48:48.313Z] 9caeb2c9b0be: Download complete
+[2026-11-06T10:48:48.811Z] 7650ba84d437: Download complete
+[2026-11-06T10:48:49.313Z] bf5f23aafe89: Pull complete
+[2026-11-06T10:48:49.511Z] 4b624c614056: Download complete
+[2026-11-06T10:48:49.917Z] 9caeb2c9b0be: Pull complete
+[2026-11-06T10:48:50.315Z] 2410fdf29426: Pull complete
+[2026-11-06T10:48:50.718Z] 6c324a26f445: Pull complete
+[2026-11-06T10:48:53.117Z] 4b624c614056: Pull complete
+[2026-11-06T10:48:53.217Z] cde406f98df7: Pull complete
+[2026-11-06T10:48:53.219Z] d71565722191: Pull complete
+[2026-11-06T10:48:53.222Z] 2be9525b2226: Pull complete
+[2026-11-06T10:48:58.977Z] 7650ba84d437: Pull complete
+[2026-11-06T10:48:59.285Z] 4f4fb700ef54: Pull complete
+[2026-11-06T10:48:59.285Z] d5a7cded1aa7: Pull complete
+[2026-11-06T10:48:59.286Z] 26f18218d114: Pull complete
+[2026-11-06T10:48:59.286Z] Digest: sha256:9ace7c60234605b242fa7edf44f77a70a17f3b0e963e8e969bd59341a5b4295d
+[2026-11-06T10:48:59.286Z] Status: Downloaded newer image for ghcr.io/renovatebot/renovate@sha256:9ace7c60234605b242fa7edf44f77a70a17f3b0e963e8e969bd59341a5b4295d
+[2026-11-06T10:49:08.912Z]  INFO: Renovate started
+[2026-11-06T10:49:08.912Z]        "renovateVersion": "44.198.0"
+[2026-11-06T10:49:08.912Z] DEBUG: Using RE2 regex engine
+[2026-11-06T10:49:08.912Z] DEBUG: Parsing configs
+[2026-11-06T10:49:08.914Z] DEBUG: Checking for config file in config.js
+[2026-11-06T10:49:08.921Z] DEBUG: No additional config file found specified - skipping
+[2026-11-06T10:49:08.929Z] DEBUG: File config
+[2026-11-06T10:49:08.929Z]        "config": {
+[2026-11-06T10:49:08.929Z]          "platform": "github",
+[2026-11-06T10:49:08.929Z]          "repositoryCache": "enabled",
+[2026-11-06T10:49:08.929Z]          "allowedUnsafeExecutions": ["mise"],
+[2026-11-06T10:49:08.929Z]          "dependencyDashboardFooter": "- [ ] <!-- trigger-run --> Trigger a Renovate run - [workflow runs & logs ↗](https://github.com/idelsink/renovate-runner/actions/workflows/renovate.yaml)",
+[2026-11-06T10:49:08.929Z]          "onboardingConfig": {
+[2026-11-06T10:49:08.929Z]            "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+[2026-11-06T10:49:08.929Z]            "extends": ["github>idelsink/renovate-runner"]
+[2026-11-06T10:49:08.929Z]          }
+[2026-11-06T10:49:08.929Z]        }
+[2026-11-06T10:49:08.929Z] DEBUG: Additional file config
+[2026-11-06T10:49:08.929Z]        "config": {}
+[2026-11-06T10:49:08.929Z] DEBUG: CLI config
+[2026-11-06T10:49:08.929Z]        "config": {}
+[2026-11-06T10:49:08.930Z] DEBUG: Env config
+[2026-11-06T10:49:08.930Z]        "config": {"hostRules": [], "token": "***********", "repositories": ["idelsink/dotfiles"]}
+[2026-11-06T10:49:08.930Z] DEBUG: Resolved global extends
+[2026-11-06T10:49:08.930Z]        "config": undefined
+[2026-11-06T10:49:08.930Z] DEBUG: Combined config
+[2026-11-06T10:49:08.930Z]        "config": {
+[2026-11-06T10:49:08.930Z]          "platform": "github",
+[2026-11-06T10:49:08.930Z]          "repositoryCache": "enabled",
+[2026-11-06T10:49:08.930Z]          "allowedUnsafeExecutions": ["mise"],
+[2026-11-06T10:49:08.930Z]          "dependencyDashboardFooter": "- [ ] <!-- trigger-run --> Trigger a Renovate run - [workflow runs & logs ↗](https://github.com/idelsink/renovate-runner/actions/workflows/renovate.yaml)",
+[2026-11-06T10:49:08.930Z]          "onboardingConfig": {
+[2026-11-06T10:49:08.930Z]            "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+[2026-11-06T10:49:08.930Z]            "extends": ["github>idelsink/renovate-runner"]
+[2026-11-06T10:49:08.930Z]          },
+[2026-11-06T10:49:08.930Z]          "hostRules": [],
+[2026-11-06T10:49:08.930Z]          "token": "***********",
+[2026-11-06T10:49:08.930Z]          "repositories": ["idelsink/dotfiles"]
+[2026-11-06T10:49:08.930Z]        }
+[2026-11-06T10:49:08.930Z] DEBUG: Enabling forkProcessing while in non-autodiscover mode
+[2026-11-06T10:49:08.930Z] DEBUG: Enabling onboardingNoDeps while in non-autodiscover mode
+[2026-11-06T10:49:08.959Z] DEBUG: Found valid git version: 2.56.0
+[2026-11-06T10:49:08.961Z] DEBUG: Containerbase image version is compatible
+[2026-11-06T10:49:08.961Z]        "version": "14.57.1"
+[2026-11-06T10:49:08.961Z] DEBUG: Setting global hostRules
+[2026-11-06T10:49:08.964Z] DEBUG: Using default github endpoint: https://api.github.com/
+[2026-11-06T10:49:08.968Z] DEBUG: hostRules: authentication already set for api.github.com
+[2026-11-06T10:49:08.971Z] DEBUG: Using queue: host=api.github.com, concurrency=16
+[2026-11-06T10:49:09.304Z] DEBUG: Platform config
+[2026-11-06T10:49:09.304Z]        "platformConfig": {
+[2026-11-06T10:49:09.304Z]          "host": {"type": "github", "apiUrl": {}},
+[2026-11-06T10:49:09.304Z]          "isGHApp": true,
+[2026-11-06T10:49:09.304Z]          "userDetails": {
+[2026-11-06T10:49:09.304Z]            "username": "renovate-iws[bot]",
+[2026-11-06T10:49:09.304Z]            "name": "renovate-iws[bot]",
+[2026-11-06T10:49:09.304Z]            "id": 260228940,
+[2026-11-06T10:49:09.304Z]            "email": null
+[2026-11-06T10:49:09.304Z]          }
+[2026-11-06T10:49:09.304Z]        },
+[2026-11-06T10:49:09.304Z]        "renovateUsername": "renovate-iws[bot]"
+[2026-11-06T10:49:09.307Z] DEBUG: Using platform gitAuthor: renovate-iws[bot] <260228940+renovate-iws[bot]@users.noreply.github.com>
+[2026-11-06T10:49:09.307Z] DEBUG: Adding token authentication for api.github.com (hostType=github) to hostRules
+[2026-11-06T10:49:09.308Z] DEBUG: Using baseDir: /tmp/renovate
+[2026-11-06T10:49:09.308Z] DEBUG: Using cacheDir: /tmp/renovate/cache
+[2026-11-06T10:49:09.309Z] DEBUG: Using containerbaseDir: /tmp/renovate/cache/containerbase
+[2026-11-06T10:49:09.309Z] DEBUG: Initializing Renovate internal cache into /tmp/renovate/cache/renovate/renovate-cache-v1
+[2026-11-06T10:49:09.309Z] DEBUG: Commits limit = null
+[2026-11-06T10:49:09.310Z] DEBUG: Setting global hostRules
+[2026-11-06T10:49:09.311Z] DEBUG: Adding token authentication for api.github.com (hostType=github) to hostRules
+[2026-11-06T10:49:09.311Z] DEBUG: validatePresets()
+[2026-11-06T10:49:09.319Z] DEBUG: Reinitializing hostRules for repo
+[2026-11-06T10:49:09.319Z] DEBUG: Clearing hostRules
+[2026-11-06T10:49:09.319Z] DEBUG: Adding token authentication for api.github.com (hostType=github) to hostRules
+[2026-11-06T10:49:09.322Z]  INFO: Repository started (repository=idelsink/dotfiles)
+[2026-11-06T10:49:09.322Z]        "renovateVersion": "44.198.0"
+[2026-11-06T10:49:09.323Z] DEBUG: Using localDir: /tmp/renovate/repos/github/idelsink/dotfiles (repository=idelsink/dotfiles)
+[2026-11-06T10:49:09.323Z] DEBUG: PackageFiles.clear() - Package files deleted (repository=idelsink/dotfiles)
+[2026-11-06T10:49:09.324Z] DEBUG: initRepo("idelsink/dotfiles") (repository=idelsink/dotfiles)
+[2026-11-06T10:49:09.325Z] DEBUG: hostRules: authentication already set for api.github.com (repository=idelsink/dotfiles)
+[2026-11-06T10:49:09.326Z] DEBUG: Using queue: host=api.github.com, concurrency=16 (repository=idelsink/dotfiles)
+[2026-11-06T10:49:09.650Z] DEBUG: idelsink/dotfiles default branch = main (repository=idelsink/dotfiles)
+[2026-11-06T10:49:09.651Z] DEBUG: Issues cache: Adding 1 issues to reconcile queue (repository=idelsink/dotfiles)
+[2026-11-06T10:49:09.651Z] DEBUG: Using app token for git init (repository=idelsink/dotfiles)
+[2026-11-06T10:49:09.652Z] DEBUG: fetchBranchCommits(): url=https://**redacted**@github.com/idelsink/dotfiles.git (repository=idelsink/dotfiles)
+[2026-11-06T10:49:09.869Z] DEBUG: Repository cache is restored from revision 13 (repository=idelsink/dotfiles)
+[2026-11-06T10:49:09.869Z] DEBUG: Resetting npmrc (repository=idelsink/dotfiles)
+[2026-11-06T10:49:09.869Z] DEBUG: Resetting npmrc (repository=idelsink/dotfiles)
+[2026-11-06T10:49:09.870Z] DEBUG: checkOnboarding() (repository=idelsink/dotfiles)
+[2026-11-06T10:49:09.870Z] DEBUG: isOnboarded() (repository=idelsink/dotfiles)
+[2026-11-06T10:49:09.870Z] DEBUG: findPr(renovate/configure, Configure Renovate, !open) (repository=idelsink/dotfiles)
+[2026-11-06T10:49:09.871Z] DEBUG: PR cache: sync fetch (repository=idelsink/dotfiles)
+[2026-11-06T10:49:10.331Z] DEBUG: http cache: saving https://api.github.com/repos/idelsink/dotfiles/pulls?per_page=20&state=all&sort=updated&direction=desc&page=1 (etag=W/"e7350f82834a295c54f57f5a6d52acd557c81999e64c5fde897936e72812b2ae", lastModified=undefined) (repository=idelsink/dotfiles)
+[2026-11-06T10:49:10.331Z] DEBUG: PR cache: Filtered 1 PRs to 1 (user=renovate-iws[bot]) (repository=idelsink/dotfiles)
+[2026-11-06T10:49:10.334Z] DEBUG: PR cache: getPrList success (repository=idelsink/dotfiles)
+[2026-11-06T10:49:10.334Z]        "pullsTotal": 1,
+[2026-11-06T10:49:10.334Z]        "requestsTotal": 1,
+[2026-11-06T10:49:10.334Z]        "apiQuotaAffected": true,
+[2026-11-06T10:49:10.334Z]        "durationMs": 462
+[2026-11-06T10:49:10.334Z] DEBUG: Found PR #1 (repository=idelsink/dotfiles)
+[2026-11-06T10:49:10.334Z] DEBUG: Checking cached config file name (repository=idelsink/dotfiles)
+[2026-11-06T10:49:10.889Z] DEBUG: http cache: Using cached response: https://api.github.com/repos/idelsink/dotfiles/contents/renovate.json from 2026-11-05T10:48:08.770Z (repository=idelsink/dotfiles)
+[2026-11-06T10:49:10.891Z] DEBUG: Existing config file confirmed (repository=idelsink/dotfiles)
+[2026-11-06T10:49:10.891Z] DEBUG: Repository config (repository=idelsink/dotfiles)
+[2026-11-06T10:49:10.891Z]        "fileName": "renovate.json",
+[2026-11-06T10:49:10.891Z]        "config": {
+[2026-11-06T10:49:10.891Z]          "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+[2026-11-06T10:49:10.891Z]          "extends": ["github>idelsink/renovate-runner"]
+[2026-11-06T10:49:10.891Z]        }
+[2026-11-06T10:49:10.891Z] DEBUG: Repo is onboarded (repository=idelsink/dotfiles)
+[2026-11-06T10:49:11.074Z] DEBUG: http cache: Using cached response: https://api.github.com/repos/idelsink/dotfiles/contents/renovate.json from 2026-11-06T10:49:10.889Z (repository=idelsink/dotfiles)
+[2026-11-06T10:49:11.074Z] DEBUG: migrateAndValidate() (repository=idelsink/dotfiles)
+[2026-11-06T10:49:11.074Z] DEBUG: No config migration necessary (repository=idelsink/dotfiles)
+[2026-11-06T10:49:11.257Z] DEBUG: http cache: Using cached response: https://api.github.com/repos/idelsink/renovate-runner/contents/default.json from 2026-11-05T10:48:07.225Z (repository=idelsink/dotfiles)
+[2026-11-06T10:49:11.262Z] DEBUG: Resolved shallow config, without merging internal presets (repository=idelsink/dotfiles)
+[2026-11-06T10:49:11.262Z]        "renovateVersion": "44.198.0",
+[2026-11-06T10:49:11.262Z]        "config": {
+[2026-11-06T10:49:11.262Z]          "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+[2026-11-06T10:49:11.262Z]          "schedule": ["before 6am on Monday"],
+[2026-11-06T10:49:11.262Z]          "prConcurrentLimit": 5,
+[2026-11-06T10:49:11.262Z]          "customManagers": [
+[2026-11-06T10:49:11.262Z]            {
+[2026-11-06T10:49:11.262Z]              "customType": "regex",
+[2026-11-06T10:49:11.262Z]              "description": [
+[2026-11-06T10:49:11.262Z]                "Container image references with digest pinning (registry/image:1.2.3@shaabc123...), annotated with # renovate: or // renovate:. Captures tag as currentValue and sha256 as currentDigest for atomic updates."
+[2026-11-06T10:49:11.262Z]              ],
+[2026-11-06T10:49:11.262Z]              "managerFilePatterns": ["/./"],
+[2026-11-06T10:49:11.262Z]              "matchStrings": [
+[2026-11-06T10:49:11.262Z]                "(?:#|//) renovate: datasource=(?<datasource>.*?)(?: depName=(?<depName>.+?))?(?: packageName=(?<packageName>.+?))?(?: versioning=(?<versioning>.+?))?(?: extractVersion=(?<extractVersion>.+?))?(?: registryUrl=(?<registryUrl>.+?))?\\n\\s*[^=:\\n]+[=:]\\s*[\"']?[^:]+:(?<currentValue>[^\\s@\"']+)@(?<currentDigest>[^\\s\"']+)"
+[2026-11-06T10:49:11.262Z]              ],
+[2026-11-06T10:49:11.262Z]              "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver-coerced{{/if}}"
+[2026-11-06T10:49:11.262Z]            },
+[2026-11-06T10:49:11.262Z]            {
+[2026-11-06T10:49:11.262Z]              "customType": "regex",
+[2026-11-06T10:49:11.262Z]              "description": [
+[2026-11-06T10:49:11.262Z]                "Container image references with tag only (no digest), annotated with # renovate: or // renovate:. Matches key-value lines where the value is a registry/path:tag."
+[2026-11-06T10:49:11.262Z]              ],
+[2026-11-06T10:49:11.262Z]              "managerFilePatterns": ["/./"],
+[2026-11-06T10:49:11.262Z]              "matchStrings": [
+[2026-11-06T10:49:11.262Z]                "(?:#|//) renovate: datasource=(?<datasource>.*?)(?: depName=(?<depName>.+?))?(?: packageName=(?<packageName>.+?))?(?: versioning=(?<versioning>.+?))?(?: extractVersion=(?<extractVersion>.+?))?(?: registryUrl=(?<registryUrl>.+?))?\\n\\s*[^=:\\n]+[=:]\\s*[\"']?[^:]+:(?<currentValue>[^\\s@\"']+)(?:[\"'\\s]|$)"
+[2026-11-06T10:49:11.262Z]              ],
+[2026-11-06T10:49:11.262Z]              "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver-coerced{{/if}}"
+[2026-11-06T10:49:11.262Z]            },
+[2026-11-06T10:49:11.262Z]            {
+[2026-11-06T10:49:11.262Z]              "customType": "regex",
+[2026-11-06T10:49:11.262Z]              "description": [
+[2026-11-06T10:49:11.262Z]                "Plain version strings annotated with # renovate: or // renovate:. Handles both assignment (KEY=) and key-value (key:) styles for any datasource."
+[2026-11-06T10:49:11.262Z]              ],
+[2026-11-06T10:49:11.262Z]              "managerFilePatterns": ["/./"],
+[2026-11-06T10:49:11.262Z]              "matchStrings": [
+[2026-11-06T10:49:11.262Z]                "(?:#|//) renovate: datasource=(?<datasource>.*?)(?: depName=(?<depName>.+?))?(?: packageName=(?<packageName>.+?))?(?: versioning=(?<versioning>.+?))?(?: extractVersion=(?<extractVersion>.+?))?(?: registryUrl=(?<registryUrl>.+?))?\\n\\s*[^=:\\n]+[=:]\\s*[\"']?(?<currentValue>[^\\s@\"'#:]+)(?:[\"'\\s]|$)"
+[2026-11-06T10:49:11.262Z]              ],
+[2026-11-06T10:49:11.262Z]              "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver-coerced{{/if}}"
+[2026-11-06T10:49:11.262Z]            }
+[2026-11-06T10:49:11.262Z]          ],
+[2026-11-06T10:49:11.262Z]          "packageRules": [
+[2026-11-06T10:49:11.262Z]            {
+[2026-11-06T10:49:11.262Z]              "description": [
+[2026-11-06T10:49:11.262Z]                "Ensure github-actions inline comments always use full vX.Y.Z semver tags"
+[2026-11-06T10:49:11.262Z]              ],
+[2026-11-06T10:49:11.262Z]              "matchManagers": ["github-actions"],
+[2026-11-06T10:49:11.262Z]              "matchDepTypes": ["action"],
+[2026-11-06T10:49:11.262Z]              "extractVersion": "^(?<version>v?\\d+\\.\\d+\\.\\d+)$",
+[2026-11-06T10:49:11.262Z]              "versioning": "regex:^v?(?<major>\\d+)(\\.(?<minor>\\d+)\\.(?<patch>\\d+))?$"
+[2026-11-06T10:49:11.262Z]            },
+[2026-11-06T10:49:11.262Z]            {
+[2026-11-06T10:49:11.262Z]              "description": [
+[2026-11-06T10:49:11.262Z]                "Disable digest pinning for regex manager deps without a currentDigest capture group"
+[2026-11-06T10:49:11.262Z]              ],
+[2026-11-06T10:49:11.262Z]              "matchManagers": ["custom.regex"],
+[2026-11-06T10:49:11.262Z]              "matchUpdateTypes": ["pin", "pinDigest"],
+[2026-11-06T10:49:11.262Z]              "enabled": false
+[2026-11-06T10:49:11.262Z]            },
+[2026-11-06T10:49:11.262Z]            {
+[2026-11-06T10:49:11.262Z]              "description": ["Disable digest pinning for kustomize OCI helmCharts"],
+[2026-11-06T10:49:11.262Z]              "matchManagers": ["kustomize"],
+[2026-11-06T10:49:11.262Z]              "matchDepTypes": ["HelmChart"],
+[2026-11-06T10:49:11.262Z]              "matchUpdateTypes": ["pin", "pinDigest"],
+[2026-11-06T10:49:11.262Z]              "enabled": false
+[2026-11-06T10:49:11.262Z]            }
+[2026-11-06T10:49:11.262Z]          ]
+[2026-11-06T10:49:11.262Z]        },
+[2026-11-06T10:49:11.262Z]        "visitedPresets": {
+[2026-11-06T10:49:11.262Z]          "merged": ["github>idelsink/renovate-runner"],
+[2026-11-06T10:49:11.262Z]          "unmerged": ["config:best-practices"]
+[2026-11-06T10:49:11.262Z]        }
+[2026-11-06T10:49:11.788Z] DEBUG: Found repo ignorePaths (repository=idelsink/dotfiles)
+[2026-11-06T10:49:11.788Z]        "ignorePaths": [
+[2026-11-06T10:49:11.788Z]          "**/node_modules/**",
+[2026-11-06T10:49:11.788Z]          "**/bower_components/**",
+[2026-11-06T10:49:11.788Z]          "**/vendor/**",
+[2026-11-06T10:49:11.788Z]          "**/examples/**",
+[2026-11-06T10:49:11.788Z]          "**/__tests__/**",
+[2026-11-06T10:49:11.788Z]          "**/test/**",
+[2026-11-06T10:49:11.788Z]          "**/tests/**",
+[2026-11-06T10:49:11.788Z]          "**/__fixtures__/**"
+[2026-11-06T10:49:11.788Z]        ]
+[2026-11-06T10:49:11.799Z] DEBUG: No vulnerability alerts enabled for repo (repository=idelsink/dotfiles)
+[2026-11-06T10:49:11.799Z] DEBUG: No vulnerability alerts found (repository=idelsink/dotfiles)
+[2026-11-06T10:49:11.801Z] DEBUG: findIssue(Dependency Dashboard) (repository=idelsink/dotfiles)
+[2026-11-06T10:49:11.801Z] DEBUG: Issues cache: Done reconciling by iterating over all items (repository=idelsink/dotfiles)
+[2026-11-06T10:49:11.801Z] DEBUG: Issues cache: synced (repository=idelsink/dotfiles)
+[2026-11-06T10:49:11.801Z] DEBUG: Found issue 2 (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.040Z] DEBUG: http cache: saving https://api.github.com/repos/idelsink/dotfiles/issues/2 (etag=W/"e3fe6e90e51dd230890e1f52b0702a482dcf3409e09ee4e76500dd8fb5798e0f", lastModified=Fri, 06 Nov 2026 10:48:44 GMT) (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.041Z] DEBUG: Issues cache: Updating issue 2 in cache (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.041Z] DEBUG: No baseBranches (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.041Z] DEBUG: extract() (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.095Z] DEBUG: Cached extract for sha=9eab104d8dc692f6158102fbc4c1c2fc9609fd27 is valid and can be used (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.095Z]  INFO: Dependency extraction complete (repository=idelsink/dotfiles, baseBranch=main)
+[2026-11-06T10:49:12.095Z]        "stats": {
+[2026-11-06T10:49:12.095Z]          "managers": {"renovate-config": {"fileCount": 1, "depCount": 1}},
+[2026-11-06T10:49:12.095Z]          "total": {"fileCount": 1, "depCount": 1}
+[2026-11-06T10:49:12.095Z]        }
+[2026-11-06T10:49:12.097Z] DEBUG: PackageFiles.add() - Package file saved for base branch (repository=idelsink/dotfiles, baseBranch=main)
+[2026-11-06T10:49:12.097Z] DEBUG: Package releases lookups complete (repository=idelsink/dotfiles, baseBranch=main)
+[2026-11-06T10:49:12.098Z] DEBUG: Repository libYears (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.098Z]        "libYears": {"managers": {"renovate-config": 0}, "total": 0},
+[2026-11-06T10:49:12.098Z]        "dependencyStatus": {"outdated": 0, "total": 1}
+[2026-11-06T10:49:12.098Z] DEBUG: branchifyUpgrades (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.099Z] DEBUG: detectSemanticCommits() (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.099Z] DEBUG: semanticCommits: returning "disabled" from cache (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.099Z] DEBUG: 0 flattened updates found:  (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.099Z] DEBUG: Returning 0 branch(es) (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.099Z] DEBUG: config.repoIsOnboarded=true (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.100Z] DEBUG: packageFiles with updates (repository=idelsink/dotfiles, baseBranch=main)
+[2026-11-06T10:49:12.100Z]        "config": {
+[2026-11-06T10:49:12.100Z]          "renovate-config": [
+[2026-11-06T10:49:12.100Z]            {
+[2026-11-06T10:49:12.100Z]              "deps": [
+[2026-11-06T10:49:12.100Z]                {
+[2026-11-06T10:49:12.100Z]                  "depName": "idelsink/renovate-runner",
+[2026-11-06T10:49:12.100Z]                  "packageName": "idelsink/renovate-runner",
+[2026-11-06T10:49:12.100Z]                  "skipReason": "unspecified-version",
+[2026-11-06T10:49:12.100Z]                  "updates": []
+[2026-11-06T10:49:12.100Z]                }
+[2026-11-06T10:49:12.100Z]              ],
+[2026-11-06T10:49:12.100Z]              "packageFile": "renovate.json"
+[2026-11-06T10:49:12.100Z]            }
+[2026-11-06T10:49:12.100Z]          ]
+[2026-11-06T10:49:12.100Z]        }
+[2026-11-06T10:49:12.100Z] DEBUG: detectSemanticCommits() (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.100Z] DEBUG: semanticCommits: returning "disabled" from cache (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.100Z] DEBUG: processRepo() (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.100Z] DEBUG: Processing 0 branches:  (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.101Z] DEBUG: 0 PRs are currently open (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.101Z] DEBUG: ConcurrentPRs count = 0 (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.101Z] DEBUG: 0 PRs are currently open (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.101Z] DEBUG: VulnerabilityConcurrentPRs count = 0 (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.101Z] DEBUG: 0 already existing branches found. (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.101Z] DEBUG: Branches count = 0 (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.101Z] DEBUG: 0 already existing branches found. (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.101Z] DEBUG: VulnerabilityBranches count = 0 (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.102Z] DEBUG: Calculating PRs created so far in this hour currentHourStart=2026-11-06T10:00:00.000Z (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.102Z] DEBUG: 0 PRs have been created so far in this hour. (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.102Z] DEBUG: HourlyPRs count = 0 (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.103Z] DEBUG: Calculating commits so far in this hour currentHourStart=2026-11-06T10:00:00.000Z, for 0 branches (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.103Z] DEBUG: 0 commits so far in this hour. (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.103Z] DEBUG: HourlyCommits count = 0 (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.249Z] DEBUG: http cache: Using cached response: https://api.github.com/repos/idelsink/dotfiles/contents/renovate.json from 2026-11-06T10:49:11.073Z (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.249Z] DEBUG: Config does not need migration (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.250Z] DEBUG: ensureDependencyDashboard() (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.250Z] DEBUG: Ensuring Dependency Dashboard (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.250Z] DEBUG: Checking packageFiles for deprecated or replacement packages (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.439Z] DEBUG: http cache: Using cached response: https://api.github.com/repos/idelsink/dotfiles/issues/2 from 2026-11-06T10:49:12.040Z (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.439Z] DEBUG: Issues cache: Updating issue 2 in cache (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.706Z] DEBUG: http cache: Using cached response: https://api.github.com/repos/idelsink/dotfiles/issues/2 from 2026-11-06T10:49:12.439Z (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.706Z] DEBUG: Issues cache: Updating issue 2 in cache (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.716Z] DEBUG: ensureIssue(Dependency Dashboard) (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.954Z] DEBUG: http cache: Using cached response: https://api.github.com/repos/idelsink/dotfiles/issues/2 from 2026-11-06T10:49:12.706Z (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.955Z] DEBUG: Issues cache: Updating issue 2 in cache (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.955Z] DEBUG: Issue is open and up to date - nothing to do (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.955Z] DEBUG: checkReconfigureBranch() (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.955Z] DEBUG: No reconfigure branch found (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.955Z]        "reconfigureBranch": "renovate/reconfigure"
+[2026-11-06T10:49:12.955Z] DEBUG: Removing any stale branches (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.955Z] DEBUG: config.repoIsOnboarded=true (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.956Z] DEBUG: No renovate branches found (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.964Z] DEBUG: PackageFiles.clear() - Package files deleted (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.965Z] DEBUG: Branch summary (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.965Z]        "cacheModified": true,
+[2026-11-06T10:49:12.965Z]        "baseBranches": [{"branchName": "main", "sha": "9eab104d8dc692f6158102fbc4c1c2fc9609fd27"}],
+[2026-11-06T10:49:12.965Z]        "branches": [],
+[2026-11-06T10:49:12.965Z]        "defaultBranch": "main",
+[2026-11-06T10:49:12.965Z]        "inactiveBranches": []
+[2026-11-06T10:49:12.965Z] DEBUG: Renovate repository PR statistics (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.965Z]        "stats": {"total": 0, "open": 0, "closed": 0, "merged": 0},
+[2026-11-06T10:49:12.965Z]        "lastPRMergedAt": undefined
+[2026-11-06T10:49:12.965Z] DEBUG: Repository result: done, status: onboarded, enabled: true, onboarded: true (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.966Z] DEBUG: Repository timing splits (milliseconds) (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.966Z]        "splits": {"init": 2480, "onboarding": 0, "extract": 296, "lookup": 5, "update": 3},
+[2026-11-06T10:49:12.966Z]        "total": 3647
+[2026-11-06T10:49:12.966Z] DEBUG: Package cache statistics (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.966Z]        "get": {"count": 0, "avgMs": 0, "medianMs": 0, "maxMs": 0, "totalMs": 0},
+[2026-11-06T10:49:12.966Z]        "set": {"count": 0, "avgMs": 0, "medianMs": 0, "maxMs": 0, "totalMs": 0}
+[2026-11-06T10:49:12.967Z] DEBUG: HTTP statistics (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.967Z]        "hosts": {
+[2026-11-06T10:49:12.967Z]          "api.github.com": {
+[2026-11-06T10:49:12.967Z]            "count": 10,
+[2026-11-06T10:49:12.967Z]            "reqAvgMs": 276,
+[2026-11-06T10:49:12.967Z]            "reqMedianMs": 238,
+[2026-11-06T10:49:12.967Z]            "reqMaxMs": 554,
+[2026-11-06T10:49:12.967Z]            "queueAvgMs": 0,
+[2026-11-06T10:49:12.967Z]            "queueMedianMs": 0,
+[2026-11-06T10:49:12.967Z]            "queueMaxMs": 1
+[2026-11-06T10:49:12.967Z]          }
+[2026-11-06T10:49:12.967Z]        },
+[2026-11-06T10:49:12.967Z]        "requests": 10
+[2026-11-06T10:49:12.967Z] DEBUG: HTTP cache statistics (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.967Z]        "https://api.github.com": {
+[2026-11-06T10:49:12.967Z]          "/repos/idelsink/dotfiles/contents/renovate.json": {"hit": 3, "miss": 0},
+[2026-11-06T10:49:12.967Z]          "/repos/idelsink/dotfiles/issues/2": {"hit": 3, "miss": 1},
+[2026-11-06T10:49:12.967Z]          "/repos/idelsink/dotfiles/pulls": {"hit": 0, "miss": 1},
+[2026-11-06T10:49:12.967Z]          "/repos/idelsink/renovate-runner/contents/default.json": {"hit": 1, "miss": 0}
+[2026-11-06T10:49:12.967Z]        }
+[2026-11-06T10:49:12.967Z] DEBUG: Lookup statistics (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.967Z] DEBUG: getReleases statistics summary (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.967Z]        "stats": {"count": 0, "avgMs": 0, "medianMs": 0, "maxMs": 0, "totalMs": 0},
+[2026-11-06T10:49:12.967Z]        "datasources": {}
+[2026-11-06T10:49:12.968Z] DEBUG: Cache fallback URLs (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.968Z]        "count": 0,
+[2026-11-06T10:49:12.968Z]        "hits": {}
+[2026-11-06T10:49:12.968Z] DEBUG: Git operations statistics (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.968Z]        "other": {
+[2026-11-06T10:49:12.968Z]          "count": 1,
+[2026-11-06T10:49:12.968Z]          "avgMs": 213,
+[2026-11-06T10:49:12.968Z]          "medianMs": 213.179136,
+[2026-11-06T10:49:12.968Z]          "maxMs": 213.179136,
+[2026-11-06T10:49:12.968Z]          "totalMs": 214
+[2026-11-06T10:49:12.968Z]        }
+[2026-11-06T10:49:12.968Z]  INFO: Repository finished (repository=idelsink/dotfiles)
+[2026-11-06T10:49:12.968Z]        "cloned": false,
+[2026-11-06T10:49:12.968Z]        "durationMs": 3647,
+[2026-11-06T10:49:12.968Z]        "result": "done",
+[2026-11-06T10:49:12.968Z]        "status": "onboarded",
+[2026-11-06T10:49:12.968Z]        "enabled": true,
+[2026-11-06T10:49:12.968Z]        "onboarded": true,
+[2026-11-06T10:49:12.968Z]        "exitCode": 0
+[2026-11-06T10:49:12.969Z] DEBUG: Checking file package cache for expired items
+[2026-11-06T10:49:12.975Z] DEBUG: Cache GC: kept 0 content entries (0 bytes), removed 0 orphaned (0 bytes) in 4ms
+[2026-11-06T10:49:12.975Z] DEBUG: Deleted 0 of 0 file cached entries in 6ms
