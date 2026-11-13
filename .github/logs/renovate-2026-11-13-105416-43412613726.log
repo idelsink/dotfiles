@@ -1,0 +1,770 @@
+[2026-11-13T10:53:48.073Z] [command]/usr/bin/docker run --rm --volume /home/runner/work/renovate-runner/renovate-runner/config.js:/usr/src/app/config.js:ro --volume /home/runner/work/_temp/renovate-cache/renovate/repository:/tmp/renovate/cache/renovate/repository --env RENOVATE_RUNNER_REPO --env RENOVATE_TOKEN --env RENOVATE_REPOSITORIES --env LOG_LEVEL --env CI ghcr.io/renovatebot/renovate:44.237.3@sha256:2f8e7e452e276cf21fa644a6aee470f720f3351b26e423625113fed06d3a65ef
+[2026-11-13T10:53:48.174Z] Unable to find image 'ghcr.io/renovatebot/renovate:44.237.3@sha256:2f8e7e452e276cf21fa644a6aee470f720f3351b26e423625113fed06d3a65ef' locally
+[2026-11-13T10:53:48.321Z] ghcr.io/renovatebot/renovate@sha256:2f8e7e452e276cf21fa644a6aee470f720f3351b26e423625113fed06d3a65ef: Pulling from renovatebot/renovate
+[2026-11-13T10:53:48.423Z] 4f4fb700ef54: Pulling fs layer
+[2026-11-13T10:53:48.423Z] e257dce82c3c: Pulling fs layer
+[2026-11-13T10:53:48.423Z] 2ce296ec964d: Pulling fs layer
+[2026-11-13T10:53:48.423Z] 1f7b0c0df8ff: Pulling fs layer
+[2026-11-13T10:53:48.423Z] 26538842dfbf: Pulling fs layer
+[2026-11-13T10:53:48.423Z] 4738799d05f6: Pulling fs layer
+[2026-11-13T10:53:48.423Z] 0eecf02196c0: Pulling fs layer
+[2026-11-13T10:53:48.423Z] 0fbfa9f1d855: Pulling fs layer
+[2026-11-13T10:53:48.423Z] 5d22afee9172: Pulling fs layer
+[2026-11-13T10:53:48.423Z] 2e05767bd361: Pulling fs layer
+[2026-11-13T10:53:48.423Z] 70a76bcb1219: Pulling fs layer
+[2026-11-13T10:53:48.423Z] 85024c89fae2: Pulling fs layer
+[2026-11-13T10:53:48.423Z] a588903cfb8f: Pulling fs layer
+[2026-11-13T10:53:48.477Z] 4f4fb700ef54: Already exists
+[2026-11-13T10:53:48.582Z] 0eecf02196c0: Download complete
+[2026-11-13T10:53:48.585Z] 0fbfa9f1d855: Download complete
+[2026-11-13T10:53:48.587Z] 1f7b0c0df8ff: Download complete
+[2026-11-13T10:53:48.589Z] 5d22afee9172: Download complete
+[2026-11-13T10:53:48.592Z] 2ce296ec964d: Download complete
+[2026-11-13T10:53:48.678Z] ddae886fe7e2: Download complete
+[2026-11-13T10:53:48.878Z] 4738799d05f6: Download complete
+[2026-11-13T10:53:48.885Z] 70a76bcb1219: Download complete
+[2026-11-13T10:53:48.979Z] 26538842dfbf: Download complete
+[2026-11-13T10:53:48.979Z] 2e05767bd361: Download complete
+[2026-11-13T10:53:49.079Z] 85024c89fae2: Download complete
+[2026-11-13T10:53:49.277Z] a588903cfb8f: Download complete
+[2026-11-13T10:53:49.776Z] e257dce82c3c: Download complete
+[2026-11-13T10:53:49.986Z] 26538842dfbf: Pull complete
+[2026-11-13T10:53:51.185Z] 5d22afee9172: Pull complete
+[2026-11-13T10:53:51.788Z] 85024c89fae2: Pull complete
+[2026-11-13T10:53:52.385Z] 2e05767bd361: Pull complete
+[2026-11-13T10:53:52.984Z] 70a76bcb1219: Pull complete
+[2026-11-13T10:53:56.689Z] e257dce82c3c: Pull complete
+[2026-11-13T10:53:56.882Z] 0fbfa9f1d855: Pull complete
+[2026-11-13T10:53:56.884Z] 2ce296ec964d: Pull complete
+[2026-11-13T10:53:56.885Z] 4738799d05f6: Pull complete
+[2026-11-13T10:54:04.641Z] 4f4fb700ef54: Pull complete
+[2026-11-13T10:54:04.642Z] 0eecf02196c0: Pull complete
+[2026-11-13T10:54:04.643Z] 1f7b0c0df8ff: Pull complete
+[2026-11-13T10:54:04.644Z] a588903cfb8f: Pull complete
+[2026-11-13T10:54:04.644Z] Digest: sha256:2f8e7e452e276cf21fa644a6aee470f720f3351b26e423625113fed06d3a65ef
+[2026-11-13T10:54:04.644Z] Status: Downloaded newer image for ghcr.io/renovatebot/renovate@sha256:2f8e7e452e276cf21fa644a6aee470f720f3351b26e423625113fed06d3a65ef
+[2026-11-13T10:54:10.566Z]  INFO: Renovate started
+[2026-11-13T10:54:10.566Z]        "renovateVersion": "44.237.3"
+[2026-11-13T10:54:10.566Z] DEBUG: Using RE2 regex engine
+[2026-11-13T10:54:10.567Z] DEBUG: Parsing configs
+[2026-11-13T10:54:10.571Z] DEBUG: Checking for config file in config.js
+[2026-11-13T10:54:10.577Z]  WARN: Config needs migrating
+[2026-11-13T10:54:10.577Z]        "configType": "config.js",
+[2026-11-13T10:54:10.577Z]        "originalConfig": {
+[2026-11-13T10:54:10.577Z]          "platform": "github",
+[2026-11-13T10:54:10.577Z]          "repositoryCache": "enabled",
+[2026-11-13T10:54:10.577Z]          "allowedUnsafeExecutions": ["mise"],
+[2026-11-13T10:54:10.577Z]          "dependencyDashboardFooter": "- [ ] <!-- trigger-run --> Trigger a Renovate run - [workflow runs & logs ↗](https://github.com/idelsink/renovate-runner/actions/workflows/renovate.yaml)",
+[2026-11-13T10:54:10.577Z]          "onboardingConfig": {
+[2026-11-13T10:54:10.577Z]            "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+[2026-11-13T10:54:10.577Z]            "extends": ["github>idelsink/renovate-runner"]
+[2026-11-13T10:54:10.577Z]          }
+[2026-11-13T10:54:10.577Z]        },
+[2026-11-13T10:54:10.577Z]        "migratedConfig": {
+[2026-11-13T10:54:10.577Z]          "platform": "github",
+[2026-11-13T10:54:10.577Z]          "repositoryCache": "enabled",
+[2026-11-13T10:54:10.577Z]          "allowedUnsafeExecutions": ["mise"],
+[2026-11-13T10:54:10.577Z]          "dependencyDashboard": {
+[2026-11-13T10:54:10.577Z]            "footer": "- [ ] <!-- trigger-run --> Trigger a Renovate run - [workflow runs & logs ↗](https://github.com/idelsink/renovate-runner/actions/workflows/renovate.yaml)"
+[2026-11-13T10:54:10.577Z]          },
+[2026-11-13T10:54:10.577Z]          "onboardingConfig": {
+[2026-11-13T10:54:10.577Z]            "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+[2026-11-13T10:54:10.577Z]            "extends": ["github>idelsink/renovate-runner"]
+[2026-11-13T10:54:10.577Z]          }
+[2026-11-13T10:54:10.577Z]        }
+[2026-11-13T10:54:10.587Z] DEBUG: No additional config file found specified - skipping
+[2026-11-13T10:54:10.604Z] DEBUG: File config
+[2026-11-13T10:54:10.604Z]        "config": {
+[2026-11-13T10:54:10.604Z]          "platform": "github",
+[2026-11-13T10:54:10.604Z]          "repositoryCache": "enabled",
+[2026-11-13T10:54:10.604Z]          "allowedUnsafeExecutions": ["mise"],
+[2026-11-13T10:54:10.604Z]          "dependencyDashboard": {
+[2026-11-13T10:54:10.604Z]            "footer": "- [ ] <!-- trigger-run --> Trigger a Renovate run - [workflow runs & logs ↗](https://github.com/idelsink/renovate-runner/actions/workflows/renovate.yaml)"
+[2026-11-13T10:54:10.604Z]          },
+[2026-11-13T10:54:10.604Z]          "onboardingConfig": {
+[2026-11-13T10:54:10.604Z]            "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+[2026-11-13T10:54:10.604Z]            "extends": ["github>idelsink/renovate-runner"]
+[2026-11-13T10:54:10.604Z]          }
+[2026-11-13T10:54:10.604Z]        }
+[2026-11-13T10:54:10.604Z] DEBUG: Additional file config
+[2026-11-13T10:54:10.604Z]        "config": {}
+[2026-11-13T10:54:10.604Z] DEBUG: CLI config
+[2026-11-13T10:54:10.604Z]        "config": {}
+[2026-11-13T10:54:10.605Z] DEBUG: Env config
+[2026-11-13T10:54:10.605Z]        "config": {"hostRules": [], "token": "***********", "repositories": ["idelsink/dotfiles"]}
+[2026-11-13T10:54:10.605Z] DEBUG: Resolved global extends
+[2026-11-13T10:54:10.605Z]        "config": undefined
+[2026-11-13T10:54:10.606Z] DEBUG: Combined config
+[2026-11-13T10:54:10.606Z]        "config": {
+[2026-11-13T10:54:10.606Z]          "platform": "github",
+[2026-11-13T10:54:10.606Z]          "repositoryCache": "enabled",
+[2026-11-13T10:54:10.606Z]          "allowedUnsafeExecutions": ["mise"],
+[2026-11-13T10:54:10.606Z]          "dependencyDashboard": {
+[2026-11-13T10:54:10.606Z]            "footer": "- [ ] <!-- trigger-run --> Trigger a Renovate run - [workflow runs & logs ↗](https://github.com/idelsink/renovate-runner/actions/workflows/renovate.yaml)"
+[2026-11-13T10:54:10.606Z]          },
+[2026-11-13T10:54:10.606Z]          "onboardingConfig": {
+[2026-11-13T10:54:10.606Z]            "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+[2026-11-13T10:54:10.606Z]            "extends": ["github>idelsink/renovate-runner"]
+[2026-11-13T10:54:10.606Z]          },
+[2026-11-13T10:54:10.606Z]          "hostRules": [],
+[2026-11-13T10:54:10.606Z]          "token": "***********",
+[2026-11-13T10:54:10.606Z]          "repositories": ["idelsink/dotfiles"]
+[2026-11-13T10:54:10.606Z]        }
+[2026-11-13T10:54:10.606Z] DEBUG: Enabling forkProcessing while in non-autodiscover mode
+[2026-11-13T10:54:10.606Z] DEBUG: Enabling onboardingNoDeps while in non-autodiscover mode
+[2026-11-13T10:54:10.621Z] DEBUG: Found valid git version: 2.56.1
+[2026-11-13T10:54:10.623Z] DEBUG: Containerbase image version is compatible
+[2026-11-13T10:54:10.623Z]        "version": "14.66.25"
+[2026-11-13T10:54:10.623Z] DEBUG: Setting global hostRules
+[2026-11-13T10:54:10.629Z] DEBUG: Using default github endpoint: https://api.github.com/
+[2026-11-13T10:54:10.637Z] DEBUG: hostRules: authentication already set for api.github.com
+[2026-11-13T10:54:10.641Z] DEBUG: Using queue: host=api.github.com, concurrency=16
+[2026-11-13T10:54:10.956Z] DEBUG: Platform config
+[2026-11-13T10:54:10.956Z]        "platformConfig": {
+[2026-11-13T10:54:10.956Z]          "host": {"type": "github", "apiUrl": {}},
+[2026-11-13T10:54:10.956Z]          "isGHApp": true,
+[2026-11-13T10:54:10.956Z]          "userDetails": {
+[2026-11-13T10:54:10.956Z]            "username": "renovate-iws[bot]",
+[2026-11-13T10:54:10.956Z]            "name": "renovate-iws[bot]",
+[2026-11-13T10:54:10.956Z]            "id": 260228940,
+[2026-11-13T10:54:10.956Z]            "email": null
+[2026-11-13T10:54:10.956Z]          }
+[2026-11-13T10:54:10.956Z]        },
+[2026-11-13T10:54:10.956Z]        "renovateUsername": "renovate-iws[bot]"
+[2026-11-13T10:54:10.961Z] DEBUG: Using platform gitAuthor: renovate-iws[bot] <260228940+renovate-iws[bot]@users.noreply.github.com>
+[2026-11-13T10:54:10.962Z] DEBUG: Adding token authentication for api.github.com (hostType=github) to hostRules
+[2026-11-13T10:54:10.963Z] DEBUG: Using baseDir: /tmp/renovate
+[2026-11-13T10:54:10.964Z] DEBUG: Using cacheDir: /tmp/renovate/cache
+[2026-11-13T10:54:10.964Z] DEBUG: Using containerbaseDir: /tmp/renovate/cache/containerbase
+[2026-11-13T10:54:10.966Z] DEBUG: Initializing Renovate internal cache into /tmp/renovate/cache/renovate/renovate-cache-v1
+[2026-11-13T10:54:10.966Z] DEBUG: Commits limit = null
+[2026-11-13T10:54:10.966Z] DEBUG: Setting global hostRules
+[2026-11-13T10:54:10.969Z] DEBUG: Adding token authentication for api.github.com (hostType=github) to hostRules
+[2026-11-13T10:54:10.971Z] DEBUG: validatePresets()
+[2026-11-13T10:54:10.984Z] DEBUG: Reinitializing hostRules for repo
+[2026-11-13T10:54:10.984Z] DEBUG: Clearing hostRules
+[2026-11-13T10:54:10.985Z] DEBUG: Adding token authentication for api.github.com (hostType=github) to hostRules
+[2026-11-13T10:54:10.989Z]  INFO: Repository started (repository=idelsink/dotfiles)
+[2026-11-13T10:54:10.989Z]        "renovateVersion": "44.237.3"
+[2026-11-13T10:54:10.989Z] DEBUG: Using localDir: /tmp/renovate/repos/github/idelsink/dotfiles (repository=idelsink/dotfiles)
+[2026-11-13T10:54:10.990Z] DEBUG: PackageFiles.clear() - Package files deleted (repository=idelsink/dotfiles)
+[2026-11-13T10:54:10.992Z] DEBUG: initRepo("idelsink/dotfiles") (repository=idelsink/dotfiles)
+[2026-11-13T10:54:10.994Z] DEBUG: hostRules: authentication already set for api.github.com (repository=idelsink/dotfiles)
+[2026-11-13T10:54:10.994Z] DEBUG: Using queue: host=api.github.com, concurrency=16 (repository=idelsink/dotfiles)
+[2026-11-13T10:54:11.223Z] DEBUG: idelsink/dotfiles default branch = main (repository=idelsink/dotfiles)
+[2026-11-13T10:54:11.224Z] DEBUG: Issues cache: Adding 1 issues to reconcile queue (repository=idelsink/dotfiles)
+[2026-11-13T10:54:11.224Z] DEBUG: Using app token for git init (repository=idelsink/dotfiles)
+[2026-11-13T10:54:11.226Z] DEBUG: fetchBranchCommits(): url=https://**redacted**@github.com/idelsink/dotfiles.git (repository=idelsink/dotfiles)
+[2026-11-13T10:54:11.357Z] DEBUG: Repository cache is restored from revision 13 (repository=idelsink/dotfiles)
+[2026-11-13T10:54:11.357Z] DEBUG: Resetting npmrc (repository=idelsink/dotfiles)
+[2026-11-13T10:54:11.358Z] DEBUG: Resetting npmrc (repository=idelsink/dotfiles)
+[2026-11-13T10:54:11.358Z] DEBUG: checkOnboarding() (repository=idelsink/dotfiles)
+[2026-11-13T10:54:11.359Z] DEBUG: isOnboarded() (repository=idelsink/dotfiles)
+[2026-11-13T10:54:11.359Z] DEBUG: findPr(renovate/configure, Configure Renovate, !open) (repository=idelsink/dotfiles)
+[2026-11-13T10:54:11.360Z] DEBUG: PR cache: sync fetch (repository=idelsink/dotfiles)
+[2026-11-13T10:54:11.648Z] DEBUG: http cache: saving https://api.github.com/repos/idelsink/dotfiles/pulls?per_page=20&state=all&sort=updated&direction=desc&page=1 (etag=W/"089551779f5729c8fff73655ac43b3a4f3b43e3fd6d9b896932d2f3b283e90d6", lastModified=undefined) (repository=idelsink/dotfiles)
+[2026-11-13T10:54:11.648Z] DEBUG: PR cache: Filtered 1 PRs to 1 (user=renovate-iws[bot]) (repository=idelsink/dotfiles)
+[2026-11-13T10:54:11.652Z] DEBUG: PR cache: getPrList success (repository=idelsink/dotfiles)
+[2026-11-13T10:54:11.652Z]        "pullsTotal": 1,
+[2026-11-13T10:54:11.652Z]        "requestsTotal": 1,
+[2026-11-13T10:54:11.652Z]        "apiQuotaAffected": true,
+[2026-11-13T10:54:11.652Z]        "durationMs": 291
+[2026-11-13T10:54:11.652Z] DEBUG: Found PR #1 (repository=idelsink/dotfiles)
+[2026-11-13T10:54:11.652Z] DEBUG: Checking cached config file name (repository=idelsink/dotfiles)
+[2026-11-13T10:54:11.851Z] DEBUG: http cache: Using cached response: https://api.github.com/repos/idelsink/dotfiles/contents/renovate.json from 2026-11-12T10:59:52.576Z (repository=idelsink/dotfiles)
+[2026-11-13T10:54:11.853Z] DEBUG: Existing config file confirmed (repository=idelsink/dotfiles)
+[2026-11-13T10:54:11.854Z] DEBUG: Repository config (repository=idelsink/dotfiles)
+[2026-11-13T10:54:11.854Z]        "fileName": "renovate.json",
+[2026-11-13T10:54:11.854Z]        "config": {
+[2026-11-13T10:54:11.854Z]          "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+[2026-11-13T10:54:11.854Z]          "extends": ["github>idelsink/renovate-runner"]
+[2026-11-13T10:54:11.854Z]        }
+[2026-11-13T10:54:11.854Z] DEBUG: Repo is onboarded (repository=idelsink/dotfiles)
+[2026-11-13T10:54:12.021Z] DEBUG: http cache: Using cached response: https://api.github.com/repos/idelsink/dotfiles/contents/renovate.json from 2026-11-13T10:54:11.851Z (repository=idelsink/dotfiles)
+[2026-11-13T10:54:12.022Z] DEBUG: migrateAndValidate() (repository=idelsink/dotfiles)
+[2026-11-13T10:54:12.022Z] DEBUG: No config migration necessary (repository=idelsink/dotfiles)
+[2026-11-13T10:54:12.149Z] DEBUG: http cache: saving https://api.github.com/repos/idelsink/renovate-runner/contents/default.json (etag="c97c1b1764853ca1887dd1a738636a299b547d66", lastModified=Fri, 13 Nov 2026 07:35:25 GMT) (repository=idelsink/dotfiles)
+[2026-11-13T10:54:12.158Z] DEBUG: Resolved shallow config, without merging internal presets (repository=idelsink/dotfiles)
+[2026-11-13T10:54:12.159Z]        "renovateVersion": "44.237.3",
+[2026-11-13T10:54:12.159Z]        "config": {
+[2026-11-13T10:54:12.159Z]          "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+[2026-11-13T10:54:12.159Z]          "schedule": ["before 6am on Monday"],
+[2026-11-13T10:54:12.159Z]          "prConcurrentLimit": 5,
+[2026-11-13T10:54:12.159Z]          "postUpdateOptions": ["npmInstallTwice"],
+[2026-11-13T10:54:12.159Z]          "customManagers": [
+[2026-11-13T10:54:12.159Z]            {
+[2026-11-13T10:54:12.159Z]              "customType": "regex",
+[2026-11-13T10:54:12.159Z]              "description": [
+[2026-11-13T10:54:12.159Z]                "Container image references with digest pinning (registry/image:1.2.3@shaabc123...), annotated with # renovate: or // renovate:. Captures tag as currentValue and sha256 as currentDigest for atomic updates."
+[2026-11-13T10:54:12.159Z]              ],
+[2026-11-13T10:54:12.159Z]              "managerFilePatterns": ["/./"],
+[2026-11-13T10:54:12.159Z]              "matchStrings": [
+[2026-11-13T10:54:12.159Z]                "(?:#|//) renovate: datasource=(?<datasource>.*?)(?: depName=(?<depName>.+?))?(?: packageName=(?<packageName>.+?))?(?: versioning=(?<versioning>.+?))?(?: extractVersion=(?<extractVersion>.+?))?(?: registryUrl=(?<registryUrl>.+?))?\\n\\s*[^=:\\n]+[=:]\\s*[\"']?[^:]+:(?<currentValue>[^\\s@\"']+)@(?<currentDigest>[^\\s\"']+)"
+[2026-11-13T10:54:12.159Z]              ],
+[2026-11-13T10:54:12.159Z]              "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver-coerced{{/if}}"
+[2026-11-13T10:54:12.159Z]            },
+[2026-11-13T10:54:12.159Z]            {
+[2026-11-13T10:54:12.159Z]              "customType": "regex",
+[2026-11-13T10:54:12.159Z]              "description": [
+[2026-11-13T10:54:12.159Z]                "Container image references with tag only (no digest), annotated with # renovate: or // renovate:. Matches key-value lines where the value is a registry/path:tag."
+[2026-11-13T10:54:12.159Z]              ],
+[2026-11-13T10:54:12.159Z]              "managerFilePatterns": ["/./"],
+[2026-11-13T10:54:12.159Z]              "matchStrings": [
+[2026-11-13T10:54:12.159Z]                "(?:#|//) renovate: datasource=(?<datasource>.*?)(?: depName=(?<depName>.+?))?(?: packageName=(?<packageName>.+?))?(?: versioning=(?<versioning>.+?))?(?: extractVersion=(?<extractVersion>.+?))?(?: registryUrl=(?<registryUrl>.+?))?\\n\\s*[^=:\\n]+[=:]\\s*[\"']?[^:]+:(?<currentValue>[^\\s@\"']+)(?:[\"'\\s]|$)"
+[2026-11-13T10:54:12.159Z]              ],
+[2026-11-13T10:54:12.159Z]              "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver-coerced{{/if}}"
+[2026-11-13T10:54:12.159Z]            },
+[2026-11-13T10:54:12.159Z]            {
+[2026-11-13T10:54:12.159Z]              "customType": "regex",
+[2026-11-13T10:54:12.159Z]              "description": [
+[2026-11-13T10:54:12.159Z]                "Plain version strings annotated with # renovate: or // renovate:. Handles both assignment (KEY=) and key-value (key:) styles for any datasource."
+[2026-11-13T10:54:12.159Z]              ],
+[2026-11-13T10:54:12.159Z]              "managerFilePatterns": ["/./"],
+[2026-11-13T10:54:12.159Z]              "matchStrings": [
+[2026-11-13T10:54:12.159Z]                "(?:#|//) renovate: datasource=(?<datasource>.*?)(?: depName=(?<depName>.+?))?(?: packageName=(?<packageName>.+?))?(?: versioning=(?<versioning>.+?))?(?: extractVersion=(?<extractVersion>.+?))?(?: registryUrl=(?<registryUrl>.+?))?\\n\\s*[^=:\\n]+[=:]\\s*[\"']?(?<currentValue>[^\\s@\"'#:]+)(?:[\"'\\s]|$)"
+[2026-11-13T10:54:12.159Z]              ],
+[2026-11-13T10:54:12.159Z]              "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver-coerced{{/if}}"
+[2026-11-13T10:54:12.159Z]            }
+[2026-11-13T10:54:12.159Z]          ],
+[2026-11-13T10:54:12.159Z]          "packageRules": [
+[2026-11-13T10:54:12.159Z]            {
+[2026-11-13T10:54:12.159Z]              "description": [
+[2026-11-13T10:54:12.159Z]                "Ensure github-actions inline comments always use full vX.Y.Z semver tags"
+[2026-11-13T10:54:12.159Z]              ],
+[2026-11-13T10:54:12.159Z]              "matchManagers": ["github-actions"],
+[2026-11-13T10:54:12.159Z]              "matchDepTypes": ["action"],
+[2026-11-13T10:54:12.159Z]              "extractVersion": "^(?<version>v?\\d+\\.\\d+\\.\\d+)$",
+[2026-11-13T10:54:12.159Z]              "versioning": "regex:^v?(?<major>\\d+)(\\.(?<minor>\\d+)\\.(?<patch>\\d+))?$"
+[2026-11-13T10:54:12.159Z]            },
+[2026-11-13T10:54:12.159Z]            {
+[2026-11-13T10:54:12.159Z]              "description": [
+[2026-11-13T10:54:12.159Z]                "Disable digest pinning for regex manager deps without a currentDigest capture group"
+[2026-11-13T10:54:12.159Z]              ],
+[2026-11-13T10:54:12.159Z]              "matchManagers": ["custom.regex"],
+[2026-11-13T10:54:12.159Z]              "matchUpdateTypes": ["pin", "pinDigest"],
+[2026-11-13T10:54:12.159Z]              "enabled": false
+[2026-11-13T10:54:12.159Z]            },
+[2026-11-13T10:54:12.159Z]            {
+[2026-11-13T10:54:12.159Z]              "description": ["Disable digest pinning for kustomize OCI helmCharts"],
+[2026-11-13T10:54:12.159Z]              "matchManagers": ["kustomize"],
+[2026-11-13T10:54:12.159Z]              "matchDepTypes": ["HelmChart"],
+[2026-11-13T10:54:12.159Z]              "matchUpdateTypes": ["pin", "pinDigest"],
+[2026-11-13T10:54:12.159Z]              "enabled": false
+[2026-11-13T10:54:12.159Z]            }
+[2026-11-13T10:54:12.159Z]          ]
+[2026-11-13T10:54:12.159Z]        },
+[2026-11-13T10:54:12.159Z]        "visitedPresets": {
+[2026-11-13T10:54:12.159Z]          "merged": ["github>idelsink/renovate-runner"],
+[2026-11-13T10:54:12.159Z]          "unmerged": ["config:best-practices"]
+[2026-11-13T10:54:12.159Z]        }
+[2026-11-13T10:54:13.287Z] DEBUG: Found repo ignorePaths (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.287Z]        "ignorePaths": [
+[2026-11-13T10:54:13.287Z]          "**/node_modules/**",
+[2026-11-13T10:54:13.287Z]          "**/bower_components/**",
+[2026-11-13T10:54:13.287Z]          "**/vendor/**",
+[2026-11-13T10:54:13.287Z]          "**/examples/**",
+[2026-11-13T10:54:13.287Z]          "**/__tests__/**",
+[2026-11-13T10:54:13.287Z]          "**/test/**",
+[2026-11-13T10:54:13.287Z]          "**/tests/**",
+[2026-11-13T10:54:13.287Z]          "**/__fixtures__/**"
+[2026-11-13T10:54:13.287Z]        ]
+[2026-11-13T10:54:13.312Z] DEBUG: No vulnerability alerts enabled for repo (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.312Z] DEBUG: No vulnerability alerts found (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.314Z] DEBUG: findIssue(Dependency Dashboard) (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.315Z] DEBUG: Issues cache: Done reconciling by iterating over all items (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.315Z] DEBUG: Issues cache: synced (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.315Z] DEBUG: Found issue 2 (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.536Z] DEBUG: http cache: saving https://api.github.com/repos/idelsink/dotfiles/issues/2 (etag=W/"2d8ed19f39665b37478f7e9d026b5bf4d3d82838f3fc2a41c2139b09a3cc19d7", lastModified=Fri, 13 Nov 2026 10:53:47 GMT) (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.537Z] DEBUG: Issues cache: Updating issue 2 in cache (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.538Z] DEBUG: No baseBranches (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.538Z] DEBUG: extract() (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.643Z] DEBUG: Cached extract result cannot be used due to config change (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.643Z] DEBUG: Setting current branch to main (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.644Z] DEBUG: syncGit(): Initializing git repository into /tmp/renovate/repos/github/idelsink/dotfiles (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.644Z] DEBUG: Performing blobless clone (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.886Z] DEBUG: git clone completed (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.886Z]        "durationMs": 241
+[2026-11-13T10:54:13.903Z] DEBUG: latest repository commit (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.903Z]        "latestCommit": {
+[2026-11-13T10:54:13.903Z]          "hash": "9eab104d8dc692f6158102fbc4c1c2fc9609fd27",
+[2026-11-13T10:54:13.903Z]          "date": "2026-04-07T21:58:25+02:00",
+[2026-11-13T10:54:13.903Z]          "message": "feat: Add renovate.json (#1)",
+[2026-11-13T10:54:13.903Z]          "refs": "HEAD -> main, origin/main, origin/HEAD",
+[2026-11-13T10:54:13.903Z]          "body": "Co-authored-by: renovate-iws[bot] <260228940+renovate-iws[bot]@users.noreply.github.com>",
+[2026-11-13T10:54:13.903Z]          "author_name": "renovate-iws[bot]",
+[2026-11-13T10:54:13.903Z]          "author_email": "260228940+renovate-iws[bot]@users.noreply.github.com"
+[2026-11-13T10:54:13.903Z]        }
+[2026-11-13T10:54:13.911Z] DEBUG: Current branch SHA: 9eab104d8dc692f6158102fbc4c1c2fc9609fd27 (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.938Z] DEBUG: latest commit (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.938Z]        "branchName": "main",
+[2026-11-13T10:54:13.938Z]        "latestCommitDate": "2026-04-07T19:58:25.000Z",
+[2026-11-13T10:54:13.938Z]        "sha": "9eab104d8dc692f6158102fbc4c1c2fc9609fd27"
+[2026-11-13T10:54:13.963Z] DEBUG: Using file pattern: **/build.xml for manager ant (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.966Z] DEBUG: Using file pattern: /(^|/)tasks/[^/]+\.ya?ml$/ for manager ansible (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.969Z] DEBUG: Using file pattern: /(^|/)(galaxy|requirements)(\.ansible)?\.ya?ml$/ for manager ansible-galaxy (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.971Z] DEBUG: Using file pattern: /(^|/)apm\.ya?ml$/ for manager apm (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.974Z] DEBUG: Using file pattern: /(^|/)\.tool-versions$/ for manager asdf (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.976Z] DEBUG: Using file pattern: /(^|/).azuredevops/.+\.ya?ml$/ for manager azure-pipelines (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.977Z] DEBUG: Using file pattern: /azure.*pipelines?.*\.ya?ml$/ for manager azure-pipelines (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.979Z] DEBUG: Using file pattern: /(^|/)batect(-bundle)?\.ya?ml$/ for manager batect (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.980Z] DEBUG: Using file pattern: /(^|/)batect$/ for manager batect-wrapper (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.982Z] DEBUG: Using file pattern: /(^|/)WORKSPACE(|\.bazel|\.bzlmod)$/ for manager bazel (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.983Z] DEBUG: Using file pattern: /\.WORKSPACE\.bazel$/ for manager bazel (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.984Z] DEBUG: Using file pattern: /\.bzl$/ for manager bazel (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.986Z] DEBUG: Using file pattern: /(^|/|\.)MODULE\.bazel$/ for manager bazel-module (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.988Z] DEBUG: Using file pattern: /(^|/)\.bazelversion$/ for manager bazelisk (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.990Z] DEBUG: Using file pattern: /\.bicep$/ for manager bicep (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.991Z] DEBUG: Using file pattern: **/*-pipelines.yml for manager bitbucket-pipelines (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.994Z] DEBUG: Using file pattern: /(^|/)bitrise\.ya?ml$/ for manager bitrise (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.996Z] DEBUG: Using file pattern: /buildkite\.ya?ml/ for manager buildkite (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.996Z] DEBUG: Using file pattern: /\.buildkite/.+\.ya?ml$/ for manager buildkite (repository=idelsink/dotfiles)
+[2026-11-13T10:54:13.999Z] DEBUG: Using file pattern: /(^|/)project\.toml$/ for manager buildpacks (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.001Z] DEBUG: Using file pattern: /(^|/)bun\.lockb?$/ for manager bun (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.002Z] DEBUG: Using file pattern: /(^|/)package\.json$/ for manager bun (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.003Z] DEBUG: Using file pattern: /(^|/)\.bun-version$/ for manager bun-version (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.005Z] DEBUG: Using file pattern: /(^|/)Gemfile$/ for manager bundler (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.007Z] DEBUG: Using file pattern: /\.cake$/ for manager cake (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.008Z] DEBUG: Using file pattern: /(^|/)Cargo\.toml$/ for manager cargo (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.011Z] DEBUG: Using file pattern: /(^|/)\.circleci/.+\.ya?ml$/ for manager circleci (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.013Z] DEBUG: Using file pattern: /(^|/)cloudbuild\.ya?ml/ for manager cloudbuild (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.015Z] DEBUG: Using file pattern: /(^|/)Podfile$/ for manager cocoapods (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.016Z] DEBUG: Using file pattern: /(^|/)([\w-]*)composer\.json$/ for manager composer (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.018Z] DEBUG: Using file pattern: /(^|/)conanfile\.(txt|py)$/ for manager conan (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.020Z] DEBUG: Using file pattern: /(^|/)\.copier-answers(\..+)?\.ya?ml/ for manager copier (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.023Z] DEBUG: Using file pattern: /(^|/)cpanfile$/ for manager cpanfile (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.036Z] DEBUG: Using file pattern: /^\.crow(?:/[^/]+)?\.ya?ml$/ for manager crow (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.038Z] DEBUG: Using file pattern: /(^|/)deno\.lock$/ for manager deno (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.039Z] DEBUG: Using file pattern: /(^|/)deno\.(json|jsonc)$/ for manager deno (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.041Z] DEBUG: Using file pattern: /(^|/)(?:deps|bb)\.edn$/ for manager deps-edn (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.042Z] DEBUG: Using file pattern: /(^|/)devbox\.json$/ for manager devbox (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.044Z] DEBUG: Using file pattern: /^.devcontainer/devcontainer.json$/ for manager devcontainer (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.044Z] DEBUG: Using file pattern: /^.devcontainer.json$/ for manager devcontainer (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.045Z] DEBUG: Using file pattern: /^.devcontainer/[^/]+/devcontainer.json$/ for manager devcontainer (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.046Z] DEBUG: Using file pattern: /(^|/)(?:docker-)?compose[^/]*\.ya?ml$/ for manager docker-compose (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.048Z] DEBUG: Using file pattern: /(^|/|\.)([Dd]ocker|[Cc]ontainer)file$/ for manager dockerfile (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.048Z] DEBUG: Using file pattern: /(^|/)([Dd]ocker|[Cc]ontainer)file[^/]*$/ for manager dockerfile (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.050Z] DEBUG: Using file pattern: /(^|/)\.drone\.yml$/ for manager droneci (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.052Z] DEBUG: Using file pattern: /(^|/)fleet\.ya?ml/ for manager fleet (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.053Z] DEBUG: Using file pattern: /(?:^|/)gotk-components\.ya?ml$/ for manager flux (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.055Z] DEBUG: Using file pattern: /(^|/)\.fvm/fvm_config\.json$/ for manager fvm (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.056Z] DEBUG: Using file pattern: /(^|/)\.fvmrc$/ for manager fvm (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.057Z] DEBUG: Using file pattern: /\.gemspec$/ for manager gemspec (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.059Z] DEBUG: Using file pattern: /(^|/)\.gitmodules$/ for manager git-submodules (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.060Z] DEBUG: Using file pattern: /(^|/)(workflow-templates|\.(?:github|gitea|forgejo)/(?:workflows|actions))/.+\.ya?ml$/ for manager github-actions (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.061Z] DEBUG: Using file pattern: /(^|/)action\.ya?ml$/ for manager github-actions (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.063Z] DEBUG: Using file pattern: /\.gitlab-ci\.ya?ml$/ for manager gitlabci (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.064Z] DEBUG: Using file pattern: /\.gitlab-ci\.ya?ml$/ for manager gitlabci-include (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.067Z] DEBUG: Using file pattern: /(^|/)gleam.toml$/ for manager gleam (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.069Z] DEBUG: Using file pattern: /(^|/)go\.mod$/ for manager gomod (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.071Z] DEBUG: Using file pattern: /\.gradle(\.kts)?$/ for manager gradle (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.071Z] DEBUG: Using file pattern: /(^|/)gradle\.properties$/ for manager gradle (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.072Z] DEBUG: Using file pattern: /(^|/)gradle/.+\.toml$/ for manager gradle (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.072Z] DEBUG: Using file pattern: /(^|/)buildSrc/.+\.kt$/ for manager gradle (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.073Z] DEBUG: Using file pattern: /\.versions\.toml$/ for manager gradle (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.073Z] DEBUG: Using file pattern: /(^|/)versions.props$/ for manager gradle (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.074Z] DEBUG: Using file pattern: /(^|/)versions.lock$/ for manager gradle (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.075Z] DEBUG: Using file pattern: /(^|/)gradle/wrapper/gradle-wrapper\.properties$/ for manager gradle-wrapper (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.077Z] DEBUG: Using file pattern: /\.cabal$/ for manager haskell-cabal (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.079Z] DEBUG: Using file pattern: /(^|/)requirements\.ya?ml$/ for manager helm-requirements (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.080Z] DEBUG: Using file pattern: /(^|/)values\.ya?ml$/ for manager helm-values (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.082Z] DEBUG: Using file pattern: /(^|/)helmfile\.ya?ml(?:\.gotmpl)?$/ for manager helmfile (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.082Z] DEBUG: Using file pattern: /(^|/)helmfile\.d/.+\.ya?ml(?:\.gotmpl)?$/ for manager helmfile (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.085Z] DEBUG: Using file pattern: /(^|/)Chart\.ya?ml$/ for manager helmv3 (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.087Z] DEBUG: Using file pattern: /(^|/)bin/hermit$/ for manager hermit (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.088Z] DEBUG: Using file pattern: /(^|/)manifest\.json$/ for manager homeassistant-manifest (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.090Z] DEBUG: Using file pattern: /^Formula/\w*/?[^/]+[.]rb$/ for manager homebrew (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.091Z] DEBUG: Using file pattern: /\.html?$/ for manager html (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.093Z] DEBUG: Using file pattern: /(^|/)plugins\.(txt|ya?ml)$/ for manager jenkins (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.094Z] DEBUG: Using file pattern: /(^|/)jsonnetfile\.json$/ for manager jsonnet-bundler (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.096Z] DEBUG: Using file pattern: /(^|/)(Julia)?Project\.toml$/ for manager julia (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.098Z] DEBUG: Using file pattern: /^.+\.main\.kts$/ for manager kotlin-script (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.100Z] DEBUG: Using file pattern: /(^|/)kustomization\.ya?ml$/ for manager kustomize (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.102Z] DEBUG: Using file pattern: /(^|/)project\.clj$/ for manager leiningen (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.104Z] DEBUG: Using file pattern: /(^|/|\.)pom\.xml$/ for manager maven (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.104Z] DEBUG: Using file pattern: /(^|/)pom\.template\.xml$/ for manager maven (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.105Z] DEBUG: Using file pattern: /^(((\.mvn)|(\.m2))/)?settings\.xml$/ for manager maven (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.105Z] DEBUG: Using file pattern: /(^|/)\.mvn/extensions\.xml$/ for manager maven (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.109Z] DEBUG: Using file pattern: /(^|\/).mvn/wrapper/maven-wrapper.properties$/ for manager maven-wrapper (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.110Z] DEBUG: Using file pattern: /(^|\/)mvnw(.cmd)?$/ for manager maven-wrapper (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.112Z] DEBUG: Using file pattern: /(^|/)package\.js$/ for manager meteor (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.113Z] DEBUG: Using file pattern: /(^|/)Mintfile$/ for manager mint (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.115Z] DEBUG: Using file pattern: **/.mise{,.*}.toml for manager mise (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.116Z] DEBUG: Using file pattern: **/mise{,.*}.toml for manager mise (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.116Z] DEBUG: Using file pattern: **/mise/config{,.*}.toml for manager mise (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.117Z] DEBUG: Using file pattern: **/.mise/config{,.*}.toml for manager mise (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.117Z] DEBUG: Using file pattern: **/.config/mise{,.*}.toml for manager mise (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.117Z] DEBUG: Using file pattern: **/.config/mise/mise{,.*}.toml for manager mise (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.118Z] DEBUG: Using file pattern: **/.config/mise/config{,.*}.toml for manager mise (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.118Z] DEBUG: Using file pattern: **/.config/mise/conf.d/*.toml for manager mise (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.119Z] DEBUG: Using file pattern: **/.rtx{,.*}.toml for manager mise (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.120Z] DEBUG: Using file pattern: /(^|/)mix\.exs$/ for manager mix (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.122Z] DEBUG: Using file pattern: /(^|/)flake\.nix$/ for manager nix (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.123Z] DEBUG: Using file pattern: /(^|/)\.node-version$/ for manager nodenv (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.125Z] DEBUG: Using file pattern: /(^|/)package\.json$/ for manager npm (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.126Z] DEBUG: Using file pattern: /(^|/)pnpm-workspace\.yaml$/ for manager npm (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.126Z] DEBUG: Using file pattern: /(^|/)\.yarnrc\.yml$/ for manager npm (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.128Z] DEBUG: Using file pattern: /\.(?:cs|fs|vb|sql)proj$/ for manager nuget (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.129Z] DEBUG: Using file pattern: /\.(?:props|targets)$/ for manager nuget (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.129Z] DEBUG: Using file pattern: /(^|/)dotnet-tools\.json$/ for manager nuget (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.130Z] DEBUG: Using file pattern: /(^|/)global\.json$/ for manager nuget (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.131Z] DEBUG: Using file pattern: /(^|/)\.nvmrc$/ for manager nvm (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.134Z] DEBUG: Using file pattern: /(^|/)src/main/features/.+\.json$/ for manager osgi (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.135Z] DEBUG: Using file pattern: /(^|/)paket\.dependencies$/ for manager paket (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.137Z] DEBUG: Using file pattern: /(^|/)pyproject\.toml$/ for manager pep621 (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.141Z] DEBUG: Using file pattern: /(^|/)[\w-]*requirements([-._]\w+)?\.(txt|pip)$/ for manager pip_requirements (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.142Z] DEBUG: Using file pattern: /(^|/)setup\.py$/ for manager pip_setup (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.144Z] DEBUG: Using file pattern: /(^|/)Pipfile$/ for manager pipenv (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.146Z] DEBUG: Using file pattern: /(^|/)pyproject\.toml$/ for manager pixi (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.146Z] DEBUG: Using file pattern: /(^|/)pixi\.toml$/ for manager pixi (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.148Z] DEBUG: Using file pattern: /(^|/)pyproject\.toml$/ for manager poetry (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.149Z] DEBUG: Using file pattern: /(^|/)\.pre-commit-config\.ya?ml$/ for manager pre-commit (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.151Z] DEBUG: Using file pattern: **/.prototools for manager proto (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.152Z] DEBUG: Using file pattern: /(^|/)pubspec\.ya?ml$/ for manager pub (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.154Z] DEBUG: Using file pattern: /(^|/)Puppetfile$/ for manager puppet (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.155Z] DEBUG: Using file pattern: /(^|/)\.python-version$/ for manager pyenv (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.157Z] DEBUG: Using file pattern: /.+\.container$/ for manager quadlet (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.157Z] DEBUG: Using file pattern: /.+\.image$/ for manager quadlet (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.158Z] DEBUG: Using file pattern: /.+\.volume$/ for manager quadlet (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.159Z] DEBUG: Using file pattern: renovate.json for manager renovate-config (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.160Z] DEBUG: Using file pattern: renovate.jsonc for manager renovate-config (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.160Z] DEBUG: Using file pattern: renovate.json5 for manager renovate-config (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.161Z] DEBUG: Using file pattern: .github/renovate.json for manager renovate-config (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.161Z] DEBUG: Using file pattern: .github/renovate.jsonc for manager renovate-config (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.161Z] DEBUG: Using file pattern: .github/renovate.json5 for manager renovate-config (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.162Z] DEBUG: Using file pattern: .gitlab/renovate.json for manager renovate-config (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.162Z] DEBUG: Using file pattern: .gitlab/renovate.jsonc for manager renovate-config (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.163Z] DEBUG: Using file pattern: .gitlab/renovate.json5 for manager renovate-config (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.163Z] DEBUG: Using file pattern: .renovaterc for manager renovate-config (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.164Z] DEBUG: Using file pattern: .renovaterc.json for manager renovate-config (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.164Z] DEBUG: Using file pattern: .renovaterc.jsonc for manager renovate-config (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.165Z] DEBUG: Using file pattern: .renovaterc.json5 for manager renovate-config (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.167Z] DEBUG: Using file pattern: /(^|/)\.ruby-version$/ for manager ruby-version (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.168Z] DEBUG: Using file pattern: /(^|/)runtime.txt$/ for manager runtime-version (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.170Z] DEBUG: Using file pattern: /(^|/)rust-toolchain(\.toml)?$/ for manager rust-toolchain (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.171Z] DEBUG: Using file pattern: /\.sbt$/ for manager sbt (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.172Z] DEBUG: Using file pattern: /project/[^/]*\.scala$/ for manager sbt (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.172Z] DEBUG: Using file pattern: /project/build\.properties$/ for manager sbt (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.173Z] DEBUG: Using file pattern: /(^|/)repositories$/ for manager sbt (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.174Z] DEBUG: Using file pattern: /(^|/)\.scalafmt.conf$/ for manager scalafmt (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.176Z] DEBUG: Using file pattern: /(^|/)setup\.cfg$/ for manager setup-cfg (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.177Z] DEBUG: Using file pattern: /(^|/)smithy-build\.json$/ for manager smithy (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.180Z] DEBUG: Using file pattern: /(^|/)Package\.swift/ for manager swift (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.183Z] DEBUG: Using file pattern: **/*.tf for manager terraform (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.183Z] DEBUG: Using file pattern: **/*.tofu for manager terraform (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.184Z] DEBUG: Using file pattern: /(^|/)\.terraform-version$/ for manager terraform-version (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.188Z] DEBUG: Using file pattern: /(^|/)terragrunt\.hcl$/ for manager terragrunt (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.190Z] DEBUG: Using file pattern: /(^|/)\.terragrunt-version$/ for manager terragrunt-version (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.191Z] DEBUG: Using file pattern: /\.tflint\.hcl$/ for manager tflint-plugin (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.193Z] DEBUG: Using file pattern: /^\.travis\.ya?ml$/ for manager travis (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.195Z] DEBUG: Using file pattern: /\.typ$/ for manager typst (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.196Z] DEBUG: Using file pattern: **/ProjectSettings/ProjectVersion.txt for manager unity3d (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.198Z] DEBUG: Using file pattern: /(^|/)\.vela\.ya?ml$/ for manager velaci (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.199Z] DEBUG: Using file pattern: /(^|/)vendir\.yml$/ for manager vendir (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.201Z] DEBUG: Using file pattern: /^\.woodpecker(?:/[^/]+)?\.ya?ml$/ for manager woodpecker (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.202Z] DEBUG: Using file pattern: **/project.yml for manager xcodegen (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.204Z] DEBUG: Using file pattern: **/{j,t}sconfig.json for manager regex (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.205Z] DEBUG: Using file pattern: **/{j,t}sconfig.*.json for manager regex (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.206Z] DEBUG: Using file pattern: **/{j,t}sconfig.json for manager regex (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.206Z] DEBUG: Using file pattern: **/{j,t}sconfig.*.json for manager regex (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.207Z] DEBUG: Using file pattern: /(^|/)\.php-version$/ for manager regex (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.209Z] DEBUG: Using file pattern: /./ for manager regex (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.210Z] DEBUG: Using file pattern: /./ for manager regex (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.211Z] DEBUG: Using file pattern: /./ for manager regex (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.214Z] DEBUG: Using file pattern: /(^|/)(workflow-templates|\.(?:github|gitea|forgejo)/(?:workflows|actions))/.+\.ya?ml$/ for manager jsonata (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.214Z] DEBUG: Using file pattern: /(^|/)action\.ya?ml$/ for manager jsonata (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.215Z] DEBUG: pre-commit is disabled (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.216Z] DEBUG: Matched 1 file(s) for manager renovate-config (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.216Z] DEBUG: Matched 44 file(s) for manager regex (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.216Z] DEBUG: Matched 44 file(s) for manager regex (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.217Z] DEBUG: Matched 44 file(s) for manager regex (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.220Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=.chezmoiroot)
+[2026-11-13T10:54:14.220Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=.chezmoiroot)
+[2026-11-13T10:54:14.220Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=.chezmoiroot)
+[2026-11-13T10:54:14.221Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=.chezmoiversion)
+[2026-11-13T10:54:14.221Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=.chezmoiversion)
+[2026-11-13T10:54:14.222Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=.chezmoiversion)
+[2026-11-13T10:54:14.222Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=.pre-commit-config.yaml)
+[2026-11-13T10:54:14.223Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=.pre-commit-config.yaml)
+[2026-11-13T10:54:14.223Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=.pre-commit-config.yaml)
+[2026-11-13T10:54:14.224Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=LICENSE)
+[2026-11-13T10:54:14.225Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=LICENSE)
+[2026-11-13T10:54:14.225Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=LICENSE)
+[2026-11-13T10:54:14.226Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=README.md)
+[2026-11-13T10:54:14.226Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=README.md)
+[2026-11-13T10:54:14.227Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=README.md)
+[2026-11-13T10:54:14.227Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=bin/check-git-pgp-user-email.sh)
+[2026-11-13T10:54:14.227Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=bin/check-git-pgp-user-email.sh)
+[2026-11-13T10:54:14.228Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=bin/check-git-pgp-user-email.sh)
+[2026-11-13T10:54:14.229Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=bin/get-pgp-key-detail.sh)
+[2026-11-13T10:54:14.229Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=bin/get-pgp-key-detail.sh)
+[2026-11-13T10:54:14.230Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=bin/get-pgp-key-detail.sh)
+[2026-11-13T10:54:14.231Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=bin/pgp-util.sh)
+[2026-11-13T10:54:14.232Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=bin/pgp-util.sh)
+[2026-11-13T10:54:14.233Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=bin/pgp-util.sh)
+[2026-11-13T10:54:14.233Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=bin/provision-pgp-machine-key.sh)
+[2026-11-13T10:54:14.234Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=bin/provision-pgp-machine-key.sh)
+[2026-11-13T10:54:14.234Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=bin/provision-pgp-machine-key.sh)
+[2026-11-13T10:54:14.235Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=bin/provision-ssh-key.sh)
+[2026-11-13T10:54:14.236Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=bin/provision-ssh-key.sh)
+[2026-11-13T10:54:14.236Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=bin/provision-ssh-key.sh)
+[2026-11-13T10:54:14.237Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/.chezmoi.toml.tmpl)
+[2026-11-13T10:54:14.237Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/.chezmoi.toml.tmpl)
+[2026-11-13T10:54:14.238Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/.chezmoi.toml.tmpl)
+[2026-11-13T10:54:14.238Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/.chezmoiscripts/run_after_check-gitconfig.sh)
+[2026-11-13T10:54:14.239Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/.chezmoiscripts/run_after_check-gitconfig.sh)
+[2026-11-13T10:54:14.239Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/.chezmoiscripts/run_after_check-gitconfig.sh)
+[2026-11-13T10:54:14.240Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/.chezmoiscripts/run_before_pgp-keys.sh.tmpl)
+[2026-11-13T10:54:14.240Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/.chezmoiscripts/run_before_pgp-keys.sh.tmpl)
+[2026-11-13T10:54:14.241Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/.chezmoiscripts/run_before_pgp-keys.sh.tmpl)
+[2026-11-13T10:54:14.241Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/.chezmoiscripts/run_before_ssh-keys.sh.tmpl)
+[2026-11-13T10:54:14.241Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/.chezmoiscripts/run_before_ssh-keys.sh.tmpl)
+[2026-11-13T10:54:14.242Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/.chezmoiscripts/run_before_ssh-keys.sh.tmpl)
+[2026-11-13T10:54:14.243Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/bin/executable_wifi-qr)
+[2026-11-13T10:54:14.243Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/bin/executable_wifi-qr)
+[2026-11-13T10:54:14.244Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/bin/executable_wifi-qr)
+[2026-11-13T10:54:14.244Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_bash_profile)
+[2026-11-13T10:54:14.244Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_bash_profile)
+[2026-11-13T10:54:14.245Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_bash_profile)
+[2026-11-13T10:54:14.245Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_bashrc)
+[2026-11-13T10:54:14.246Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_bashrc)
+[2026-11-13T10:54:14.246Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_bashrc)
+[2026-11-13T10:54:14.247Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_config/dconf-chezmoi/.export-dconf-settings.sh)
+[2026-11-13T10:54:14.248Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_config/dconf-chezmoi/.export-dconf-settings.sh)
+[2026-11-13T10:54:14.248Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_config/dconf-chezmoi/.export-dconf-settings.sh)
+[2026-11-13T10:54:14.249Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_config/dconf-chezmoi/README.md)
+[2026-11-13T10:54:14.249Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_config/dconf-chezmoi/README.md)
+[2026-11-13T10:54:14.250Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_config/dconf-chezmoi/README.md)
+[2026-11-13T10:54:14.250Z] DEBUG: home/dot_config/dconf-chezmoi/dconf-backups/.gitkeep has no content (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.250Z] DEBUG: home/dot_config/dconf-chezmoi/dconf-backups/.gitkeep has no content (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.250Z] DEBUG: home/dot_config/dconf-chezmoi/dconf-backups/.gitkeep has no content (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.251Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_config/dconf-chezmoi/dconf.ini)
+[2026-11-13T10:54:14.252Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_config/dconf-chezmoi/dconf.ini)
+[2026-11-13T10:54:14.253Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_config/dconf-chezmoi/dconf.ini)
+[2026-11-13T10:54:14.253Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_config/dconf-chezmoi/run_after_import-dconf-settings.sh)
+[2026-11-13T10:54:14.254Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_config/dconf-chezmoi/run_after_import-dconf-settings.sh)
+[2026-11-13T10:54:14.254Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_config/dconf-chezmoi/run_after_import-dconf-settings.sh)
+[2026-11-13T10:54:14.255Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_config/private_k9s/private_config.yaml)
+[2026-11-13T10:54:14.255Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_config/private_k9s/private_config.yaml)
+[2026-11-13T10:54:14.256Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_config/private_k9s/private_config.yaml)
+[2026-11-13T10:54:14.256Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_config/zed/private_keymap.json)
+[2026-11-13T10:54:14.257Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_config/zed/private_keymap.json)
+[2026-11-13T10:54:14.257Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_config/zed/private_keymap.json)
+[2026-11-13T10:54:14.258Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_config/zed/private_settings.json)
+[2026-11-13T10:54:14.258Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_config/zed/private_settings.json)
+[2026-11-13T10:54:14.259Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_config/zed/private_settings.json)
+[2026-11-13T10:54:14.259Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_config/zed/run_after_check-auto-install-extensions.sh)
+[2026-11-13T10:54:14.260Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_config/zed/run_after_check-auto-install-extensions.sh)
+[2026-11-13T10:54:14.260Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_config/zed/run_after_check-auto-install-extensions.sh)
+[2026-11-13T10:54:14.261Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_gdbinit)
+[2026-11-13T10:54:14.261Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_gdbinit)
+[2026-11-13T10:54:14.261Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_gdbinit)
+[2026-11-13T10:54:14.262Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_git-template/hooks/executable_pre-commit)
+[2026-11-13T10:54:14.262Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_git-template/hooks/executable_pre-commit)
+[2026-11-13T10:54:14.263Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_git-template/hooks/executable_pre-commit)
+[2026-11-13T10:54:14.263Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_local/share/applications/wifi-qr.desktop)
+[2026-11-13T10:54:14.264Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_local/share/applications/wifi-qr.desktop)
+[2026-11-13T10:54:14.264Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_local/share/applications/wifi-qr.desktop)
+[2026-11-13T10:54:14.265Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_tmux.conf)
+[2026-11-13T10:54:14.265Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_tmux.conf)
+[2026-11-13T10:54:14.266Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_tmux.conf)
+[2026-11-13T10:54:14.266Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_vimrc)
+[2026-11-13T10:54:14.266Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_vimrc)
+[2026-11-13T10:54:14.267Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/dot_vimrc)
+[2026-11-13T10:54:14.267Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/exact_dot_bashrc.d/create_aliases_system.sh)
+[2026-11-13T10:54:14.268Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/exact_dot_bashrc.d/create_aliases_system.sh)
+[2026-11-13T10:54:14.268Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/exact_dot_bashrc.d/create_aliases_system.sh)
+[2026-11-13T10:54:14.269Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/exact_dot_bashrc.d/create_executable_99-local.sh)
+[2026-11-13T10:54:14.269Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/exact_dot_bashrc.d/create_executable_99-local.sh)
+[2026-11-13T10:54:14.270Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/exact_dot_bashrc.d/create_executable_99-local.sh)
+[2026-11-13T10:54:14.270Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/exact_dot_bashrc.d/executable_01-echo-graphic-rendition.sh)
+[2026-11-13T10:54:14.270Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/exact_dot_bashrc.d/executable_01-echo-graphic-rendition.sh)
+[2026-11-13T10:54:14.271Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/exact_dot_bashrc.d/executable_01-echo-graphic-rendition.sh)
+[2026-11-13T10:54:14.271Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/exact_dot_bashrc.d/executable_02-aliases.sh)
+[2026-11-13T10:54:14.272Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/exact_dot_bashrc.d/executable_02-aliases.sh)
+[2026-11-13T10:54:14.272Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/exact_dot_bashrc.d/executable_02-aliases.sh)
+[2026-11-13T10:54:14.273Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/exact_dot_bashrc.d/executable_03-bash-config.sh)
+[2026-11-13T10:54:14.273Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/exact_dot_bashrc.d/executable_03-bash-config.sh)
+[2026-11-13T10:54:14.274Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/exact_dot_bashrc.d/executable_03-bash-config.sh)
+[2026-11-13T10:54:14.274Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/exact_dot_bashrc.d/executable_04-bash-ps1.sh)
+[2026-11-13T10:54:14.275Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/exact_dot_bashrc.d/executable_04-bash-ps1.sh)
+[2026-11-13T10:54:14.275Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/exact_dot_bashrc.d/executable_04-bash-ps1.sh)
+[2026-11-13T10:54:14.276Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/exact_dot_bashrc.d/executable_05-mise.sh)
+[2026-11-13T10:54:14.276Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/exact_dot_bashrc.d/executable_05-mise.sh)
+[2026-11-13T10:54:14.277Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/exact_dot_bashrc.d/executable_05-mise.sh)
+[2026-11-13T10:54:14.277Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/exact_dot_bashrc.d/executable_11-gcc.sh)
+[2026-11-13T10:54:14.278Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/exact_dot_bashrc.d/executable_11-gcc.sh)
+[2026-11-13T10:54:14.278Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/exact_dot_bashrc.d/executable_11-gcc.sh)
+[2026-11-13T10:54:14.279Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/private_dot_gitconfig.d/create_private_local)
+[2026-11-13T10:54:14.279Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/private_dot_gitconfig.d/create_private_local)
+[2026-11-13T10:54:14.279Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/private_dot_gitconfig.d/create_private_local)
+[2026-11-13T10:54:14.280Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/private_dot_gitconfig.tmpl)
+[2026-11-13T10:54:14.280Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/private_dot_gitconfig.tmpl)
+[2026-11-13T10:54:14.281Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/private_dot_gitconfig.tmpl)
+[2026-11-13T10:54:14.281Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/private_dot_ssh/exact_config.d/create_private_local)
+[2026-11-13T10:54:14.282Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/private_dot_ssh/exact_config.d/create_private_local)
+[2026-11-13T10:54:14.282Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/private_dot_ssh/private_config)
+[2026-11-13T10:54:14.283Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/private_dot_ssh/exact_config.d/create_private_local)
+[2026-11-13T10:54:14.283Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/private_dot_ssh/private_config)
+[2026-11-13T10:54:14.283Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=home/private_dot_ssh/private_config)
+[2026-11-13T10:54:14.284Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=renovate.json)
+[2026-11-13T10:54:14.284Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=renovate.json)
+[2026-11-13T10:54:14.285Z] DEBUG: No dependencies found in file for custom regex manager (repository=idelsink/dotfiles, packageFile=renovate.json)
+[2026-11-13T10:54:14.285Z] DEBUG: manager extract durations (ms) (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.285Z]        "managers": {"pre-commit": 2, "regex": 69, "renovate-config": 3}
+[2026-11-13T10:54:14.285Z] DEBUG: Found renovate-config package files (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.286Z] DEBUG: Found 1 package file(s) (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.287Z]  INFO: Dependency extraction complete (repository=idelsink/dotfiles, baseBranch=main)
+[2026-11-13T10:54:14.287Z]        "stats": {
+[2026-11-13T10:54:14.287Z]          "managers": {"renovate-config": {"fileCount": 1, "depCount": 1}},
+[2026-11-13T10:54:14.287Z]          "total": {"fileCount": 1, "depCount": 1}
+[2026-11-13T10:54:14.287Z]        }
+[2026-11-13T10:54:14.290Z] DEBUG: PackageFiles.add() - Package file saved for base branch (repository=idelsink/dotfiles, baseBranch=main)
+[2026-11-13T10:54:14.290Z] DEBUG: Package releases lookups complete (repository=idelsink/dotfiles, baseBranch=main)
+[2026-11-13T10:54:14.290Z] DEBUG: Repository libYears (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.291Z]        "libYears": {"managers": {"renovate-config": 0}, "total": 0},
+[2026-11-13T10:54:14.291Z]        "dependencyStatus": {"outdated": 0, "total": 1}
+[2026-11-13T10:54:14.291Z] DEBUG: branchifyUpgrades (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.293Z] DEBUG: detectSemanticCommits() (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.293Z] DEBUG: getCommitMessages (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.303Z] DEBUG: semanticCommits: score=0 (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.303Z] DEBUG: semanticCommits: disabled (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.303Z] DEBUG: 0 flattened updates found:  (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.303Z] DEBUG: Returning 0 branch(es) (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.304Z] DEBUG: config.repoIsOnboarded=true (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.304Z] DEBUG: packageFiles with updates (repository=idelsink/dotfiles, baseBranch=main)
+[2026-11-13T10:54:14.304Z]        "config": {
+[2026-11-13T10:54:14.304Z]          "renovate-config": [
+[2026-11-13T10:54:14.304Z]            {
+[2026-11-13T10:54:14.304Z]              "deps": [
+[2026-11-13T10:54:14.304Z]                {
+[2026-11-13T10:54:14.304Z]                  "depName": "idelsink/renovate-runner",
+[2026-11-13T10:54:14.304Z]                  "skipReason": "unspecified-version",
+[2026-11-13T10:54:14.304Z]                  "packageName": "idelsink/renovate-runner",
+[2026-11-13T10:54:14.304Z]                  "updates": []
+[2026-11-13T10:54:14.304Z]                }
+[2026-11-13T10:54:14.304Z]              ],
+[2026-11-13T10:54:14.304Z]              "packageFile": "renovate.json"
+[2026-11-13T10:54:14.304Z]            }
+[2026-11-13T10:54:14.304Z]          ]
+[2026-11-13T10:54:14.304Z]        }
+[2026-11-13T10:54:14.305Z] DEBUG: detectSemanticCommits() (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.305Z] DEBUG: semanticCommits: returning "disabled" from cache (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.305Z] DEBUG: processRepo() (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.305Z] DEBUG: Processing 0 branches:  (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.306Z] DEBUG: 0 PRs are currently open (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.306Z] DEBUG: ConcurrentPRs count = 0 (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.306Z] DEBUG: 0 PRs are currently open (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.306Z] DEBUG: VulnerabilityConcurrentPRs count = 0 (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.307Z] DEBUG: 0 already existing branches found. (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.307Z] DEBUG: Branches count = 0 (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.307Z] DEBUG: 0 already existing branches found. (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.307Z] DEBUG: VulnerabilityBranches count = 0 (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.308Z] DEBUG: Calculating PRs created so far in this hour currentHourStart=2026-11-13T10:00:00.000Z (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.308Z] DEBUG: 0 PRs have been created so far in this hour. (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.309Z] DEBUG: HourlyPRs count = 0 (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.309Z] DEBUG: Calculating commits so far in this hour currentHourStart=2026-11-13T10:00:00.000Z, for 0 branches (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.309Z] DEBUG: 0 commits so far in this hour. (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.310Z] DEBUG: HourlyCommits count = 0 (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.446Z] DEBUG: http cache: Using cached response: https://api.github.com/repos/idelsink/dotfiles/contents/renovate.json from 2026-11-13T10:54:12.021Z (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.447Z] DEBUG: Config does not need migration (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.448Z] DEBUG: ensureDependencyDashboard() (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.448Z] DEBUG: Ensuring Dependency Dashboard (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.448Z] DEBUG: Checking packageFiles for deprecated or replacement packages (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.754Z] DEBUG: http cache: Using cached response: https://api.github.com/repos/idelsink/dotfiles/issues/2 from 2026-11-13T10:54:13.535Z (repository=idelsink/dotfiles)
+[2026-11-13T10:54:14.754Z] DEBUG: Issues cache: Updating issue 2 in cache (repository=idelsink/dotfiles)
+[2026-11-13T10:54:15.097Z] DEBUG: http cache: Using cached response: https://api.github.com/repos/idelsink/dotfiles/issues/2 from 2026-11-13T10:54:14.753Z (repository=idelsink/dotfiles)
+[2026-11-13T10:54:15.097Z] DEBUG: Issues cache: Updating issue 2 in cache (repository=idelsink/dotfiles)
+[2026-11-13T10:54:15.115Z] DEBUG: ensureIssue(Dependency Dashboard) (repository=idelsink/dotfiles)
+[2026-11-13T10:54:15.384Z] DEBUG: http cache: Using cached response: https://api.github.com/repos/idelsink/dotfiles/issues/2 from 2026-11-13T10:54:15.097Z (repository=idelsink/dotfiles)
+[2026-11-13T10:54:15.384Z] DEBUG: Issues cache: Updating issue 2 in cache (repository=idelsink/dotfiles)
+[2026-11-13T10:54:15.385Z] DEBUG: Issue is open and up to date - nothing to do (repository=idelsink/dotfiles)
+[2026-11-13T10:54:15.385Z] DEBUG: checkReconfigureBranch() (repository=idelsink/dotfiles)
+[2026-11-13T10:54:15.385Z] DEBUG: No reconfigure branch found (repository=idelsink/dotfiles)
+[2026-11-13T10:54:15.385Z]        "reconfigureBranch": "renovate/reconfigure"
+[2026-11-13T10:54:15.386Z] DEBUG: Removing any stale branches (repository=idelsink/dotfiles)
+[2026-11-13T10:54:15.386Z] DEBUG: config.repoIsOnboarded=true (repository=idelsink/dotfiles)
+[2026-11-13T10:54:15.386Z] DEBUG: No renovate branches found (repository=idelsink/dotfiles)
+[2026-11-13T10:54:15.401Z] DEBUG: PackageFiles.clear() - Package files deleted (repository=idelsink/dotfiles)
+[2026-11-13T10:54:15.401Z] DEBUG: Branch summary (repository=idelsink/dotfiles)
+[2026-11-13T10:54:15.401Z]        "cacheModified": true,
+[2026-11-13T10:54:15.401Z]        "baseBranches": [{"branchName": "main", "sha": "9eab104d8dc692f6158102fbc4c1c2fc9609fd27"}],
+[2026-11-13T10:54:15.401Z]        "branches": [],
+[2026-11-13T10:54:15.401Z]        "defaultBranch": "main",
+[2026-11-13T10:54:15.401Z]        "inactiveBranches": []
+[2026-11-13T10:54:15.401Z] DEBUG: Renovate repository PR statistics (repository=idelsink/dotfiles)
+[2026-11-13T10:54:15.401Z]        "stats": {"total": 0, "open": 0, "closed": 0, "merged": 0},
+[2026-11-13T10:54:15.401Z]        "lastPRMergedAt": undefined
+[2026-11-13T10:54:15.402Z] DEBUG: Repository result: done, status: onboarded, enabled: true, onboarded: true (repository=idelsink/dotfiles)
+[2026-11-13T10:54:15.407Z] DEBUG: Repository timing splits (milliseconds) (repository=idelsink/dotfiles)
+[2026-11-13T10:54:15.408Z]        "splits": {"init": 2327, "onboarding": 1, "extract": 975, "lookup": 17, "update": 4},
+[2026-11-13T10:54:15.408Z]        "total": 4422
+[2026-11-13T10:54:15.408Z] DEBUG: Package cache statistics (repository=idelsink/dotfiles)
+[2026-11-13T10:54:15.408Z]        "get": {"count": 0, "avgMs": 0, "medianMs": 0, "maxMs": 0, "totalMs": 0},
+[2026-11-13T10:54:15.408Z]        "set": {"count": 0, "avgMs": 0, "medianMs": 0, "maxMs": 0, "totalMs": 0}
+[2026-11-13T10:54:15.409Z] DEBUG: HTTP statistics (repository=idelsink/dotfiles)
+[2026-11-13T10:54:15.409Z]        "hosts": {
+[2026-11-13T10:54:15.409Z]          "api.github.com": {
+[2026-11-13T10:54:15.409Z]            "count": 10,
+[2026-11-13T10:54:15.409Z]            "reqAvgMs": 223,
+[2026-11-13T10:54:15.409Z]            "reqMedianMs": 227,
+[2026-11-13T10:54:15.409Z]            "reqMaxMs": 340,
+[2026-11-13T10:54:15.409Z]            "queueAvgMs": 1,
+[2026-11-13T10:54:15.409Z]            "queueMedianMs": 0,
+[2026-11-13T10:54:15.409Z]            "queueMaxMs": 2
+[2026-11-13T10:54:15.409Z]          }
+[2026-11-13T10:54:15.409Z]        },
+[2026-11-13T10:54:15.409Z]        "requests": 10
+[2026-11-13T10:54:15.410Z] DEBUG: HTTP cache statistics (repository=idelsink/dotfiles)
+[2026-11-13T10:54:15.410Z]        "https://api.github.com": {
+[2026-11-13T10:54:15.410Z]          "/repos/idelsink/dotfiles/contents/renovate.json": {"hit": 3, "miss": 0},
+[2026-11-13T10:54:15.410Z]          "/repos/idelsink/dotfiles/issues/2": {"hit": 3, "miss": 1},
+[2026-11-13T10:54:15.410Z]          "/repos/idelsink/dotfiles/pulls": {"hit": 0, "miss": 1},
+[2026-11-13T10:54:15.410Z]          "/repos/idelsink/renovate-runner/contents/default.json": {"hit": 0, "miss": 1}
+[2026-11-13T10:54:15.410Z]        }
+[2026-11-13T10:54:15.410Z] DEBUG: Lookup statistics (repository=idelsink/dotfiles)
+[2026-11-13T10:54:15.411Z] DEBUG: getReleases statistics summary (repository=idelsink/dotfiles)
+[2026-11-13T10:54:15.411Z]        "stats": {"count": 0, "avgMs": 0, "medianMs": 0, "maxMs": 0, "totalMs": 0},
+[2026-11-13T10:54:15.411Z]        "datasources": {}
+[2026-11-13T10:54:15.411Z] DEBUG: Cache fallback URLs (repository=idelsink/dotfiles)
+[2026-11-13T10:54:15.411Z]        "count": 0,
+[2026-11-13T10:54:15.411Z]        "hits": {}
+[2026-11-13T10:54:15.412Z] DEBUG: Git operations statistics (repository=idelsink/dotfiles)
+[2026-11-13T10:54:15.412Z]        "other": {
+[2026-11-13T10:54:15.412Z]          "count": 8,
+[2026-11-13T10:54:15.412Z]          "avgMs": 22,
+[2026-11-13T10:54:15.412Z]          "medianMs": 7.736064,
+[2026-11-13T10:54:15.412Z]          "maxMs": 125.41568,
+[2026-11-13T10:54:15.412Z]          "totalMs": 180
+[2026-11-13T10:54:15.412Z]        },
+[2026-11-13T10:54:15.412Z]        "clone": {
+[2026-11-13T10:54:15.412Z]          "count": 1,
+[2026-11-13T10:54:15.412Z]          "avgMs": 240,
+[2026-11-13T10:54:15.412Z]          "medianMs": 240.109312,
+[2026-11-13T10:54:15.412Z]          "maxMs": 240.109312,
+[2026-11-13T10:54:15.412Z]          "totalMs": 241
+[2026-11-13T10:54:15.412Z]        },
+[2026-11-13T10:54:15.412Z]        "checkout": {
+[2026-11-13T10:54:15.412Z]          "count": 1,
+[2026-11-13T10:54:15.412Z]          "avgMs": 11,
+[2026-11-13T10:54:15.412Z]          "medianMs": 10.912768,
+[2026-11-13T10:54:15.412Z]          "maxMs": 10.912768,
+[2026-11-13T10:54:15.412Z]          "totalMs": 11
+[2026-11-13T10:54:15.412Z]        },
+[2026-11-13T10:54:15.412Z]        "reset": {
+[2026-11-13T10:54:15.412Z]          "count": 1,
+[2026-11-13T10:54:15.412Z]          "avgMs": 11,
+[2026-11-13T10:54:15.412Z]          "medianMs": 10.834432,
+[2026-11-13T10:54:15.412Z]          "maxMs": 10.834432,
+[2026-11-13T10:54:15.412Z]          "totalMs": 11
+[2026-11-13T10:54:15.412Z]        }
+[2026-11-13T10:54:15.412Z]  INFO: Repository finished (repository=idelsink/dotfiles)
+[2026-11-13T10:54:15.412Z]        "cloned": true,
+[2026-11-13T10:54:15.412Z]        "durationMs": 4422,
+[2026-11-13T10:54:15.412Z]        "result": "done",
+[2026-11-13T10:54:15.412Z]        "status": "onboarded",
+[2026-11-13T10:54:15.412Z]        "enabled": true,
+[2026-11-13T10:54:15.412Z]        "onboarded": true,
+[2026-11-13T10:54:15.412Z]        "exitCode": 0
+[2026-11-13T10:54:15.413Z] DEBUG: Checking file package cache for expired items
+[2026-11-13T10:54:15.424Z] DEBUG: Cache GC: kept 0 content entries (0 bytes), removed 0 orphaned (0 bytes) in 8ms
+[2026-11-13T10:54:15.424Z] DEBUG: Deleted 0 of 0 file cached entries in 10ms
